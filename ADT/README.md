@@ -1,8 +1,12 @@
 # ADT
 |Name|Description|
 |----|-----------|
-|List|[List description]|
-|Set|[Set description]|
+|Stack|[Goto][StackDescription]|
+|Queue|[Goto][QueueDescription]|
+|List|[Goto][ListDescription]|
+|Set|[Goto][SetDescription]|
 
-[List description]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/List>
-[Set description]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Set>
+[StackDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Stack>
+[QueueDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Queue>
+[ListDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/List>
+[SetDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Set>
