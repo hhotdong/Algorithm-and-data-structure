@@ -11,7 +11,7 @@
 |List|[Goto][ListDescription]|
 |Set|[Goto][SetDescription]|
 
-[StackDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Stack>
+[StackDescription]: </ADT/Stack/stack.md>
 [QueueDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Queue>
 [ListDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/List>
 [SetDescription]: <https://github.com/hhotdong/programming-exercise/tree/main/ADT/Set>
