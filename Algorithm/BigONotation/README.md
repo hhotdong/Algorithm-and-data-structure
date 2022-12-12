@@ -9,7 +9,7 @@
   - 어떤 알고리즘의 실행시간이 6n^2 + 100n + 300 이라고 가정하자. n이 증가하는 경우 6n^2의 값이 증가하는 속도가 100n+300이 증가하는 속도 보다 훨씬 빠르다. 따라서 n이 매우 커지게 되면 100n+300이 결과값에서 차지하는 비중은 매우 작아져서 추세 비교에 있어서는 무시해도 될 수준이 된다. 따라서 주어진 알고리즘의 실행시간 증가율을 점근적으로 표기법하면 n^2이 된다.
 - 수학적 정의: 두 개의 함수 f(n)과 g(n)이 주어졌을 때, 모든 n>=K에 대하여 f(n)<=C(n)을 만족하는 두 개의 상수 C와 K가 존재하면, f(n)의 Big-O는 O(g(n))이다.(단, n>=0, f(n)>=0, g(n)>=0)
 
-![testimage](/images/asymptotic-notation-example "Asymptotic notation example")
+![example image](./images/asymptotic_notation_example "Asymptotic notation example")
 
 ## 종류
 - O(1): 상수형 Big-O. 데이터 수에 관계없이 연산횟수가 고정된다.
