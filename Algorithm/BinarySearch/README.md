@@ -1,7 +1,8 @@
 # Binary search
 
-- Time complexity(worst case): O(logn)
-
+| Complexity       | Big-O       |
+| :--------------- | :---------- |
+| Time(worst case) | O(logn)     |
 
 ## Note
 
