@@ -1,6 +1,8 @@
-# programming exercise
-<br/>
+# Algorithm
 
-## [ADT](/ADT/README.md)
+## [Big-O notation](/Algorithm/BigONotation/README.md)
 
-## [Algorithm](/Algorithm/README.md)
+
+# Data structure
+
+## [ADT](/DataStructure/ADT/README.md)
