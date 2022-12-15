@@ -2,10 +2,10 @@
 
 > 구현을 제외한 동작에 대한 추상적 정의.
 
-[Stack][stackLink]<br>
-[Queue][queueLink]<br>
-[List][listLink]<br>
-[Set][setLink]<br>
+- [Stack][stackLink]<br>
+- [Queue][queueLink]<br>
+- [List][listLink]<br>
+- [Set][setLink]<br>
 
 # Data structure
 
