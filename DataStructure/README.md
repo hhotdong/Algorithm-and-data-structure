@@ -6,12 +6,12 @@
 
 > ADT에 정의된 동작을 구현한 결과물.
 
-[Stack][StackDescription]<br>
-[Queue][QueueDescription]<br>
-[List][ListDescription]<br>
-[Set][SetDescription]<br>
+[Stack][stackLink]<br>
+[Queue][queueLink]<br>
+[List][listLink]<br>
+[Set][setLink]<br>
 
-[StackDescription]: <../Stack/stack.md>
-[QueueDescription]: <../ADT/Queue/queue.md>
-[ListDescription]: <../ADT/List/list.md>
-[SetDescription]: <../ADT/Set/set.md>
+[stackLink]: <../Stack/stack.md>
+[queueLink]: <../ADT/Queue/queue.md>
+[listLink]: <../ADT/List/list.md>
+[setLink]: <../ADT/Set/set.md>
