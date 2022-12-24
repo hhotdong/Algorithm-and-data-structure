@@ -1,7 +1,7 @@
 # Algorithm
 
 - [Big-O notation](/Algorithm/BigONotation/README.md)
-- [Binary sesarch](/Algorithm/BinarySearch/README.md)
+- [Binary search](/Algorithm/BinarySearch/README.md)
 
 # Data structure
 
