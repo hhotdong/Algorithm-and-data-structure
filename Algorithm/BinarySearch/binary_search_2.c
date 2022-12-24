@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdbool.h>  // bool, true, false
 
-bool binary_search_leftmost(int target, int arr[], int len)
+// If target is found in the given array, return the index of the leftmost element. If not, return -1.
+int binary_search_leftmost(int target, int arr[], int len)
 {
     int first = 0;
     int last  = len;
@@ -14,10 +14,14 @@ bool binary_search_leftmost(int target, int arr[], int len)
         else
             last = mid;
     }
-    return arr[first] == target;
+
+    if (arr[first] == target)
+        return first;
+    return -1;
 }
 
-bool binary_search_rightmost(int target, int arr[], int len)
+// If target is found in the given array, return the index of the rightmost element. If not, return -1.
+int binary_search_rightmost(int target, int arr[], int len)
 {
     int first = 0;
     int last  = len;
@@ -30,21 +34,30 @@ bool binary_search_rightmost(int target, int arr[], int len)
         else
             first = mid + 1;
     }
-    return arr[last - 1] == target;
+    
+    if (arr[last - 1] == target)
+        return last - 1;
+    return -1;
 }
 
 int main(void)
 {
-    int arr[] = { 23, 44, 58, 79, 100 };
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 9, 10 };
     
     int num = 0;
     printf("Enter number to search: ");
     scanf("%d", &num);
     
-    bool found = binary_search_leftmost(num, arr, sizeof(arr) / sizeof(arr[0]));     
-    printf("Number(%d) %s in the array.\n", num, found ? "found" : "not found");    
+    int leftmost_idx = binary_search_leftmost(num, arr, sizeof(arr) / sizeof(arr[0]));
+    if (leftmost_idx == -1)
+        printf("Number(%d) not found.\n", num);
+    else
+        printf("Number(%d) found at index(%d) in the array.\n", num, leftmost_idx);
 
-    found = binary_search_rightmost(num, arr, sizeof(arr) / sizeof(arr[0]));     
-    printf("Number(%d) %s in the array.\n", num, found ? "found" : "not found");    
+    int rightmost_idx = binary_search_rightmost(num, arr, sizeof(arr) / sizeof(arr[0]));
+    if (rightmost_idx == -1)
+        printf("Number(%d) not found.\n", num);
+    else
+        printf("Number(%d) found at index(%d) in the array.\n", num, rightmost_idx);
     return 0;
 }
