@@ -5,6 +5,7 @@
 | Complexity       | Big-O       |
 | :--------------- | :---------- |
 | Time(worst case) | O(logn)     |
+| Space            | O(1)        |
 
 ## Note
 
