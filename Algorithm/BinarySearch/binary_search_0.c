@@ -22,10 +22,10 @@ bool binary_search(int target, int arr[], int len)
 
 int main(void)
 {
-    int arr[] = { 23, 44, 58, 79, 100 };
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     
     int num = 0;
-    printf("Enter number to search: ");
+    printf("Enter number to search between 1 and 10: ");
     scanf("%d", &num);
     
     bool found = binary_search(num, arr, sizeof(arr) / sizeof(arr[0]));     

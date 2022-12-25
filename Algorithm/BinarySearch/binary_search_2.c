@@ -45,7 +45,7 @@ int main(void)
     int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 9, 10 };
     
     int num = 0;
-    printf("Enter number to search: ");
+    printf("Enter number to search between 1 and 10: ");
     scanf("%d", &num);
     
     int leftmost_idx = binary_search_leftmost(num, arr, sizeof(arr) / sizeof(arr[0]));
