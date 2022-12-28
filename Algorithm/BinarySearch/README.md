@@ -15,6 +15,6 @@
 
 [^definition]: https://en.wikipedia.org/wiki/Binary_search_algorithm
 
-## References
+### References
 
 - https://en.wikipedia.org/wiki/Binary_search_algorithm
