@@ -5,4 +5,4 @@
 
 # Data structure
 
-- [ADT](/DataStructure/ADT/README.md)
+- [ADT](/DataStructure/README.md)
