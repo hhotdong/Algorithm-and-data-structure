@@ -11,11 +11,7 @@
 
 > ADT에 정의된 기능을 구현한 결과물.
 
-[stackLink]: <./Stack/stack.md>
-[queueLink]: <./Queue/queue.md>
+[stackLink]: <./Stack/README.md>
+[queueLink]: <./Queue/README.md>
 [listLink]: <./List/README.md>
-[setLink]: <./Set/set.md>
-
-## References
-
-- 윤성우, <윤성우의 열혈 자료구조>
+[setLink]: <./Set/README.md>
