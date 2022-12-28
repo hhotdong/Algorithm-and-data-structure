@@ -1,6 +1,6 @@
 # ADT(Abstract data type)
 
-> 구현을 제외한 동작에 대한 추상적 정의.
+> 기능의 구체적인 구현이 아닌 기능 자체에 대한 추상적 정의.
 
 - [Stack][stackLink]<br>
 - [Queue][queueLink]<br>
@@ -9,9 +9,13 @@
 
 # Data structure
 
-> ADT에 정의된 동작을 구현한 결과물.
+> ADT에 정의된 기능을 구현한 결과물.
 
 [stackLink]: <./Stack/stack.md>
 [queueLink]: <./ADT/Queue/queue.md>
 [listLink]: <./ADT/List/list.md>
 [setLink]: <./ADT/Set/set.md>
+
+## References
+
+- 윤성우, <윤성우의 열혈 자료구조>
