@@ -12,9 +12,9 @@
 > ADT에 정의된 기능을 구현한 결과물.
 
 [stackLink]: <./Stack/stack.md>
-[queueLink]: <./ADT/Queue/queue.md>
-[listLink]: <./ADT/List/list.md>
-[setLink]: <./ADT/Set/set.md>
+[queueLink]: <./Queue/queue.md>
+[listLink]: <./List/README.md>
+[setLink]: <./Set/set.md>
 
 ## References
 
