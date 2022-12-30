@@ -6,7 +6,7 @@
 | Add         | O(n)            |
 | Remove      | O(n)            |
 
-## [Pros](#heading-id)
+## Pros {#heading-id}
 
 - Accessing and assignment by index is very fast.[^static_arraylist_pros_1]
 - Data are located contiguously in memory.[^static_arraylist_pros_2]
