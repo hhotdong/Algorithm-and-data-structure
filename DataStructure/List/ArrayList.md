@@ -24,7 +24,7 @@
 | Add         | O(n)            |
 | Remove      | O(n)            |
 
-## Prosa
+## Pros
 
 - All the [pros](#pros) of static array list included here.
 - Appending(inserting at the end of array) data is relatively fast(amortized O(1)[^dynamic_arraylist_pros_1]). Same performance characteristic as removing objects at the end of the array.
