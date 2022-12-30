@@ -6,7 +6,7 @@
 | Add         | O(n)            |
 | Remove      | O(n)            |
 
-## Pros {#heading-id}
+## Pros {#customid}
 
 - Accessing and assignment by index is very fast.[^static_arraylist_pros_1]
 - Data are located contiguously in memory.[^static_arraylist_pros_2]
@@ -26,7 +26,7 @@
 
 ## Pros
 
-- All the [pros](#heading-id) of static array list included here.
+- All the [pros](#customid) of static array list included here.
 - Appending(inserting at the end of array) data is relatively fast(amortized O(1)[^dynamic_arraylist_pros_1]). Same performance characteristic as removing objects at the end of the array.
 
 ## Cons
