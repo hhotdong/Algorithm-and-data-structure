@@ -4,11 +4,17 @@
 
 ## 주요 동작
 
-- Create: 리스트 생성
-- Add: 리스트에 원소 추가
-- Delete: 리스트에서 원소 제거
-- Traverse
+- Append: 리스트 맨 끝에 원소 추가
+- Insert: 리스트 특정 위치에 원소 추가
+- Remove: 리스트에서 특정 데이터 삭제
+- Search: 리스트에서 특정 데이터 탐색
+- Traverse: 리스트의 데이터를 하나씩 순회
 
-## [Array list][arrayListLink]
+## 종류
 
-[arrayListLink]: <./ArrayList.md>
+### [Array list][arraylist_link]
+
+### [Linked list][linkedlist_link]
+
+[arraylist_link]: <./ArrayList.md>
+[linkedlist_link]: <./LinkedList.md>
