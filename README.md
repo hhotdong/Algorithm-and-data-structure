@@ -1,7 +1,7 @@
 # Algorithm
 
-- [Big-O notation](big_o_link)
-- [Binary search](binary_search_link)
+- [Big-O notation][big_o_link]
+- [Binary search][binary_search_link]
 
 # Data structure
 
