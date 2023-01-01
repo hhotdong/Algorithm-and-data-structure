@@ -5,6 +5,7 @@
 
 # Data structure
 
+- [ADT][adt_link]
 - [Stack][stack_link]
 - [Queue][queue_link]
 - [List][list_link]
@@ -12,6 +13,7 @@
 
 [big_o_link]: </Algorithm/BigONotation/README.md>
 [binary_search_link]: </Algorithm/BinarySearch/README.md>
+[adt_link]: </DataStructure/README.md>
 [stack_link]: </DataStructure/Stack/README.md>
 [queue_link]: </DataStructure/Queue/README.md>
 [list_link]: </DataStructure/List/README.md>
