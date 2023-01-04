@@ -14,7 +14,7 @@
 - [Array list][arraylist_link]
 - [Linked list][linkedlist_link]
 
-[arraylist_link]: <./ArrayList.md>
-[linkedlist_link]: <./LinkedList.md>
+[arraylist_link]: <./ArrayList/README.md>
+[linkedlist_link]: <./LinkedList/README.md>
 
 [^list_adt_definition]: https://isaaccomputerscience.org/concepts/dsa_datastruct_list?examBoard=all&stage=all
