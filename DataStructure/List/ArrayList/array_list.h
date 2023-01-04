@@ -20,7 +20,7 @@ void InitList(List* plist);
 
 void Add(List* plist, LData data);
 
-void Remove(List* plist, LData data);
+LData Remove(List* plist);
 
 int First(List* plist, LData* pdata);
 
@@ -29,7 +29,5 @@ int Next(List* plist, LData* pdata);
 int Count(List* plist);
 
 int IsEmpty(List* plist);
-
-int Search(List* plist, LData data);
 
 #endif
