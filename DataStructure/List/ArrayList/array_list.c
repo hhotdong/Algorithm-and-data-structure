@@ -1,9 +1,10 @@
+#include <stdio.h>
 #include "array_list.h"
 
 void InitList(List* plist)
 {
     plist->numOfData = 0;
-    plist->curPos = 0;
+    plist->curPos = -1;
 }
 
 void Add(List* plist, LData data)
@@ -58,4 +59,13 @@ int Count(List* plist)
 int IsEmpty(List* plist)
 {
     return plist->numOfData == 0;
+}
+
+void PrintList(List* plist)
+{
+    if (IsEmpty(plist))
+        return;
+
+    for (int i = 0; i < plist->numOfData; ++i)
+        printf("List element(%d): %d\n", i, plist->arr[i]);
 }

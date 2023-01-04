@@ -30,4 +30,6 @@ int Count(List* plist);
 
 int IsEmpty(List* plist);
 
+void PrintList(List* plist);
+
 #endif
