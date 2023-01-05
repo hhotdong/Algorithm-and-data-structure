@@ -1,41 +1,51 @@
 #include <stdio.h>
 #include "array_list.h"
 
+void PrintList(List* plist)
+{
+    LData data;
+    printf("List size: %d\n", ListCount(plist));
+    if (ListFirst(plist, &data))
+    {
+        printf("%d ", data);
+        while (ListNext(plist, &data))
+            printf("%d ", data);
+    }
+    printf("\n\n");
+}
+
 int main(void)
 {
     List list;
     LData data;
-    InitList(&list);
-    Add(&list, 1);
-    Add(&list, 3);
-    Add(&list, 5);
+    ListInit(&list);
+    
+    for (int i = 1; i <= 10; ++i)
+        ListAdd(&list, i);
 
     PrintList(&list);
-    First(&list, &data);
-    Next(&list, &data); 
-    Next(&list, &data); 
-    Remove(&list);
-    printf("\n");
 
-    PrintList(&list);
-    Remove(&list);
-    printf("\n");
-
-    PrintList(&list);
-    Remove(&list);
-    printf("\n");
-
-    PrintList(&list);
-    Remove(&list);
-    printf("\n");
-
-    LData delData;
-    if (First(&list, &delData))
+    if (ListFirst(&list, &data))
     {
-        Remove(&list);
-        while (Next(&list, &delData))
-            Remove(&list);
+        if (data == 5)
+            ListRemove(&list);
+        while (ListNext(&list, &data))
+        {
+            if (data == 5)
+                ListRemove(&list);
+        }
+    }
+
+    PrintList(&list);
+
+    if (ListFirst(&list, &data))
+    {
+        ListRemove(&list);
+        while (ListNext(&list, &data))
+            ListRemove(&list);
     }
     
+    PrintList(&list);
+
     return 0;
 }

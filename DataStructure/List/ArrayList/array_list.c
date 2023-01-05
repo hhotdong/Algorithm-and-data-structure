@@ -1,13 +1,14 @@
+// 참고: 윤성우의 열혈 자료구조
 #include <stdio.h>
 #include "array_list.h"
 
-void InitList(List* plist)
+void ListInit(List* plist)
 {
-    plist->numOfData = 0;
-    plist->curPos = -1;
+    (plist->numOfData) = 0;
+    (plist->curPos) = -1;
 }
 
-void Add(List* plist, LData data)
+void ListAdd(List* plist, LData data)
 {
     if (plist->numOfData >= MAX_LEN)
         return;
@@ -16,9 +17,9 @@ void Add(List* plist, LData data)
     ++(plist->numOfData);
 }
 
-LData Remove(List* plist)
+LData ListRemove(List* plist)
 {
-    if (IsEmpty(plist))
+    if (ListIsEmpty(plist))
         return -1;
 
     LData delData = plist->arr[plist->curPos];
@@ -31,19 +32,19 @@ LData Remove(List* plist)
     return delData;
 }
 
-int First(List* plist, LData* pdata)
+int ListFirst(List* plist, LData* pdata)
 {
-    if (IsEmpty(plist))
+    if (ListIsEmpty(plist))
         return FALSE;
 
-    plist->curPos = 0;
-    *pdata = plist->arr[plist->curPos];
+    (plist->curPos) = 0;
+    *pdata = plist->arr[0];
     return TRUE;
 }
 
-int Next(List* plist, LData* pdata)
+int ListNext(List* plist, LData* pdata)
 {
-    if ((plist->curPos) + 1 >= MAX_LEN)
+    if ((plist->curPos) + 1 >= (plist->numOfData))
         return FALSE;
     
     ++(plist->curPos);
@@ -51,21 +52,12 @@ int Next(List* plist, LData* pdata)
     return TRUE;
 }
 
-int Count(List* plist)
+int ListCount(List* plist)
 {
     return plist->numOfData;
 }
 
-int IsEmpty(List* plist)
+int ListIsEmpty(List* plist)
 {
     return plist->numOfData == 0;
-}
-
-void PrintList(List* plist)
-{
-    if (IsEmpty(plist))
-        return;
-
-    for (int i = 0; i < plist->numOfData; ++i)
-        printf("List element(%d): %d\n", i, plist->arr[i]);
 }

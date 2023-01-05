@@ -1,5 +1,5 @@
-#ifndef _H_ARRAY_LIST_
-#define _H_ARRAY_LIST_
+#ifndef _ARRAY_LIST_H_
+#define _ARRAY_LIST_H_
 
 #define FALSE 0
 #define TRUE 1
@@ -16,20 +16,18 @@ typedef struct _ArrayList
 
 typedef ArrayList List;
 
-void InitList(List* plist);
+void ListInit(List* plist);
 
-void Add(List* plist, LData data);
+void ListAdd(List* plist, LData data);
 
-LData Remove(List* plist);
+LData ListRemove(List* plist);
 
-int First(List* plist, LData* pdata);
+int ListFirst(List* plist, LData* pdata);
 
-int Next(List* plist, LData* pdata);
+int ListNext(List* plist, LData* pdata);
 
-int Count(List* plist);
+int ListCount(List* plist);
 
-int IsEmpty(List* plist);
-
-void PrintList(List* plist);
+int ListIsEmpty(List* plist);
 
 #endif
