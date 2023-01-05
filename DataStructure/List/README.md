@@ -2,12 +2,17 @@
 
 > "...a linear collection of data items in some order, in that each element occupies a specific position in the list. (...) Unlike a set, the elements of a list do not need to be unique."[^list_adt_definition]
 
-## Operations
+## ADT
 
+- Create
+- Destroy
 - Add
+- AddAt
 - Remove
-- Search
-- Traverse
+- RemoveAt
+- Get
+- Size
+- IsEmpty
 
 ## Implementations
 
