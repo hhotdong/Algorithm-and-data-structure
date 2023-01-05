@@ -35,6 +35,7 @@
 ## Pros
 
 - All the [pros of static array list](#pros) included.[^dynamic_arraylist_pros_0]
+- More flexible due to resizability of array.
 
 ## Cons
 
