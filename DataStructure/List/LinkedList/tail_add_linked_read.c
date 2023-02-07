@@ -36,7 +36,7 @@ int main(void)
 
     printf("\n");
 
-    printf("전체 출력!\n");
+    printf("전체 출력\n");
 
     if (head == NULL)
     {
@@ -64,7 +64,7 @@ int main(void)
         Node * delNode = head;
         Node * delNextNode = head->next;
 
-        printf("%d을 삭제함\n", head->data);
+        printf("%d 삭제\n", head->data);
         free(delNode);
 
         while(delNextNode != NULL)
@@ -72,7 +72,7 @@ int main(void)
             delNode = delNextNode;
             delNextNode = delNextNode->next;
 
-            printf("%d을 삭제함\n", delNode->data);
+            printf("%d 삭제\n", delNode->data);
             free(delNode);
         }
     }
