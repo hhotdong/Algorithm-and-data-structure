@@ -23,31 +23,15 @@ int main(void)
         if (readData < 1)
             break;
 
-        // 새로운 노드를 head에 추가하기
-        //newNode = (Node*)malloc(sizeof(Node));
-        //newNode->data = readData;
-        //newNode->next = NULL;        
-        //if (head == NULL)
-        //    head = newNode;
-        //else
-        //    tail->next = newNode;
-        //tail = newNode;
-
-        // 새로운 노드를 tail에 추가하기
         newNode = (Node*)malloc(sizeof(Node));
         newNode->data = readData;
-        newNode->next = NULL;
+        newNode->next = NULL;     
 
         if (head == NULL)
-        {
             head = newNode;
-            tail = newNode;
-        }
         else
-        {
-            newNode->next = head;
-            head = newNode;
-        }
+            tail->next = newNode;
+        tail = newNode;
     }
 
     printf("\n");
