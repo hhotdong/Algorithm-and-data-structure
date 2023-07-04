@@ -1,3 +1,4 @@
+// 참고: <윤성우의 열혈 자료구조>
 #ifndef _ARRAY_LIST_H_
 #define _ARRAY_LIST_H_
 
