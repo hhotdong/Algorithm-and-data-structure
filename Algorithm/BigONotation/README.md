@@ -3,11 +3,11 @@
 
 - 알고리즘 성능 비교 시 데이터 수의 증가에 따른 연산횟수의 증가율(rate of growth) 상한(upper bound)을 나타내는 표기법.
 - 점근적 표기법(Asymptotic notation) 중 하나이므로 입력값 n이 아주 큰 값이라고 가정한다. 따라서 데이터 수 n에 대한 시간복잡도 함수 T(n)이 다항식으로 표현될 때, 중요도가 낮은 항과 상수를 제거한다.
-  - T(n)=7*n^3+3*n^2+2 일 때, T(n) = O(n^3)
-  - T(n)=2^n+n^2 일 때, T(n) = O(2^n)
-  - T(n)=2^n+n^4 일 때, T(n) = O(2^n)
+  - T(n)=7*n^3+3*n^2+2 => O(n^3)
+  - T(n)=2^n+n^2 => O(2^n)
+  - T(n)=2^n+n^4 => O(2^n)
   - 어떤 알고리즘의 실행시간이 6n^2 + 100n + 300 이라고 가정하자. n이 증가하는 경우 6n^2의 값이 증가하는 속도가 100n+300이 증가하는 속도 보다 훨씬 빠르다. 따라서 n이 매우 커지게 되면 100n+300이 결과값에서 차지하는 비중은 매우 작아져서 추세 비교에 있어서는 무시해도 될 수준이 된다. 따라서 주어진 알고리즘의 실행시간 증가율을 점근적으로 표기법하면 n^2이 된다.
-- 수학적 정의: 두 개의 함수 f(n)과 g(n)이 주어졌을 때, 모든 n>=K에 대하여 f(n)<=C(n)을 만족하는 두 개의 상수 C와 K가 존재하면, f(n)의 Big-O는 O(g(n))이다.(단, n>=0, f(n)>=0, g(n)>=0)
+- 수학적 정의: 두 개의 함수 f(n)과 g(n)이 주어졌을 때, 모든 n>=K에 대하여 f(n)<=C*g(n)을 만족하는 두 개의 상수 C와 K가 존재하면, f(n)의 Big-O는 O(g(n))이다.(단, n>=0, f(n)>=0, g(n)>=0)
 
 [![example image](./images/asymptotic_notation_example.jpg "Image from Khan Academy")](https://en.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation)
 
