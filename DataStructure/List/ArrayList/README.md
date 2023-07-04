@@ -16,8 +16,8 @@
 ## Cons
 
 - List capacity must be specified at allocation.[^static_arraylist_cons_0]
-- Memory space is wasted due to unused space which is reserved for capacity.[^static_arraylist_cons_1]
-- Adding or removing is costly because copying occurs frequently.[^static_arraylist_cons_2]
+- Memory space is wasted due to unused space which is reserved for capacity.
+- Adding or removing is costly because copying occurs frequently.[^static_arraylist_cons_1]
 
 ## Used when
 
@@ -39,7 +39,7 @@
 
 ## Cons
 
-- Memory space is wasted due to unused space which is reserved for capacity.
+- Memory space is wasted due to unused space which is reserved for capacity.[^dynamic_arraylist_cons_1]
 - Adding or removing is costly because copying occurs frequently.
 - Unpredictable performance when insertion or removal requires resizing.
 - In a highly fragmented memory region, it may be expensive or impossible to find contiguous space for a large dynamic array.
@@ -63,6 +63,6 @@
 [^static_arraylist_pros_1]: It benefits from processor caching. Furthermore, it needs only simple calculation to find out the mid-point of array so that allows you to implement efficient sorting and searching algorithms, for example a binary seach or merge sort.
 [^static_arraylist_pros_2]: When capacity has been reached, resizing is needed and it takes O(n).
 [^static_arraylist_cons_0]: In other words, capacity is fixed and data cannot be added when array is full.
-[^static_arraylist_cons_1]: Because dynamic array implementation usually allocates more memory than necessary(since resize is a very slow operation).
-[^static_arraylist_cons_2]: Whenever new data is added or removed at certain index, all data whose index is bigger must be moved by one. Therefore, performance is especially poor when the operations occured near the start of the array.
+[^static_arraylist_cons_1]: Whenever new data is added or removed at certain index, all data whose index is bigger must be moved by one. Therefore, performance is especially poor when the operations occured near the start of the array.
 [^dynamic_arraylist_pros_0]: However, in languages like Python or Java that enforce reference semantics, the dynamic array generally will not store the actual data, but rather it will store references to the data that resides in other areas of memory. In this case, accessing items in the array sequentially will actually involve accessing multiple non-contiguous areas of memory, so the many advantages of the cache-friendliness of this data structure are lost.
+[^dynamic_arraylist_cons_1]: Because dynamic array implementation usually allocates more memory than necessary(since resize is a very slow operation).
