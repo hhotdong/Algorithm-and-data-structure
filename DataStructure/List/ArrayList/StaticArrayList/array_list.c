@@ -1,4 +1,4 @@
-// 참고: 윤성우의 열혈 자료구조
+// 참고: <윤성우의 열혈 자료구조>
 #include <stdio.h>
 #include "array_list.h"
 
