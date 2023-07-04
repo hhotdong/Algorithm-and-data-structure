@@ -1,7 +1,7 @@
 
 # Big-O notation
 
-- 알고리즘 성능 비교 시 데이터 수의 증가에 따른 연산횟수의 증가율(rate of growth) 상한(upper bound)을 나타내는 표기법.
+- 알고리즘 성능 비교 시[^algorithm_performance_0] 데이터 수의 증가에 따른 연산횟수의 증가율(rate of growth) 상한(upper bound)을 나타내는 표기법.
 - 점근적 표기법(Asymptotic notation) 중 하나이므로 입력값 n이 아주 큰 값이라고 가정한다. 따라서 데이터 수 n에 대한 시간복잡도 함수 T(n)이 다항식으로 표현될 때, 중요도가 낮은 항과 상수를 제거한다.
   - T(n)=7*n^3+3*n^2+2 => O(n^3)
   - T(n)=2^n+n^2 => O(2^n)
@@ -27,7 +27,7 @@
 
 ## Note
 
-- 알고리즘 성능 판단을 위해 평균적인 경우(average case)를 비교하는 일 역시 의미가 있으나 무엇이 '평균적인가'를 정의하고 신뢰도 있는 결과값을 얻기 위해서는 다양한 자료가 필요하다. 따라서 일반적인 알고리즘 평가에는 논란의 소지가 거의 없는 최악의 경우(worst case)를 이용한다.
+- 알고리즘 성능 판단을 위해 평균적인 경우(average case)를 비교하는 일 역시 의미가 있으나 무엇이 '평균적인가'를 정의하고 신뢰도 있는 결과값을 얻기 위해서는 다양한 자료가 필요하다. 따라서 일반적인 알고리즘 평가에는 논란의 여지가 거의 없는 최악의 경우(worst case)를 이용한다.[^algorithm_performance_1]
 
 ### References
 
@@ -35,3 +35,5 @@
 - [Khan Academy][ka]
 
 [ka]: <https://ko.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation> "Khan Academy"
+[^algorithm_performance_0]: 알고리즘의 성능(속도)은 연산횟수를 측정해서 판단한다. 처리해야 할 데이터의 수 n에 대한 연산횟수의 함수 T(n)을 구성했을 때, n이 증가함에 따라 T(n)의 증가율이 낮을수록 성능이 좋은 알고리즘이다.
+[^algorithm_performance_1]: 최선의 경우(best case)는 어떤 알고리즘이건 간에 대부분 만족할 만한 결과를 보인다.
