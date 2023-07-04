@@ -100,7 +100,6 @@ void VectorAddAt(Vector v, int i, Data data)
     if (v->size >= v->capacity)
         VectorDoubleCapacity(v);
 
-
     for (int j = v->size; j > i + 1; --j)
         v->arr[j] = v->arr[j-1];
     
