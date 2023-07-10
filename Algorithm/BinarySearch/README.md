@@ -9,7 +9,7 @@
 | Time(worst case) | O(logn)     | floor(log<sub>2</sub>n + 1)[^iter] |
 | Space            | O(1)        | -                                  |
 
-[![example image](./images/binary_search_example.png "Image from Wikipedia")]([https://en.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation](https://en.wikipedia.org/wiki/Binary_search_algorithm#Procedure_for_finding_the_leftmost_element))
+[![example image](./images/binary_search_example.jpg "Image from Wikipedia")](https://en.wikipedia.org/wiki/Binary_search_algorithm#Procedure_for_finding_the_leftmost_element)
 
 - In the worst case, binary search makes floor(log<sub>2</sub>n + 1) iterations of the comparison loop. This is because the worst case is reached when the search reaches the deepest level of the tree, and there are always floor(log<sub>2</sub>n + 1) levels in the tree for any binary search.
 - The worst case may also be reached when the target element is not in the array. If n is one less than a power of two, then this is always the case. Otherwise, the search may perform floor(log<sub>2</sub>n + 1) iterations if the search reaches the deepest level of the tree. However, it may make floor(log<sub>2</sub>n) iterations, which is one less than the worst case, if the search ends at the second-deepest level of the tree.
