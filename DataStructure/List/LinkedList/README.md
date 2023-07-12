@@ -4,6 +4,16 @@
 
 - Useful when the size of the list is not known in advance.[^linkelist_pros_1]
 
+## Cons
+
+- List capacity must be specified at allocation.[^static_arraylist_cons_0]
+- Memory space is wasted due to unused space which is reserved for capacity.
+- Adding or removing is costly because copying occurs frequently.[^static_arraylist_cons_1]
+
+## Used when
+
+- 
+
 ### References
 
 - [isaaccomputerscience][reference_link_1]
