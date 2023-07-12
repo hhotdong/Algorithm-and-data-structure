@@ -69,7 +69,7 @@ LData ListRemove(List * plist)
     Node * delNode = plist->cur;
     LData delData = delNode->data;
     plist->prev->next = delNode->next;
-    plist->cur = plist->prev;
+    plist->cur = plist->prev;  // Make sure plist->cur points to the most recently accessed node
     free(delNode);
     (plist->numOfData)--;
     return delData;
