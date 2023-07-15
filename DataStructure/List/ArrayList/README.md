@@ -18,6 +18,7 @@
 - List capacity must be specified at allocation.[^static_arraylist_cons_0]
 - Memory space is wasted due to unused space which is reserved for capacity.
 - Adding or removing is costly because copying occurs frequently.[^static_arraylist_cons_1]
+- Set membership operation takes O(n) time.
 
 ## Used when
 
@@ -41,6 +42,7 @@
 
 - Memory space is wasted due to unused space which is reserved for capacity.[^dynamic_arraylist_cons_1]
 - Adding or removing is costly because copying occurs frequently.
+- Set membership operation takes O(n) time.
 - Unpredictable performance when insertion or removal requires resizing.
 - In a highly fragmented memory region, it may be expensive or impossible to find contiguous space for a large dynamic array.
 
