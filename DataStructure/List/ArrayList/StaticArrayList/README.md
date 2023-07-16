@@ -20,9 +20,9 @@
 - Adding or removing is costly because copying occurs frequently.[^static_arraylist_cons_1]
 - Set membership operation takes O(n) time.
 
-## Used when
+## Usage
 
-- the maximum logical size is fixed (e.g. by specification), or can be calculated before the array is allocated.
+- When the maximum logical size is fixed(e.g. by specification), or can be calculated before the array is allocated.
 
 # References
 
