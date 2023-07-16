@@ -5,15 +5,15 @@
 ## Cons
 
 - Accessing an element in a singly linked list requires traversing the list from the head to the desired node, making it slow for random access operations compared to arrays.
-- Singly linked lists require additional memory for storing the pointers to the next node in each element, resulting in increased memory overhead compared to arrays.
-- Singly linked lists are vulnerable to data loss if a node’s next pointer is lost or corrupted, as there is no way to traverse the list and access other elements.
-- Singly linked lists are not suitable for parallel processing, as updating a node requires exclusive access to its next pointer, which cannot be easily done in a parallel environment.
-- In singly linked list does not support backward traversing.
+- It requires additional memory for storing the pointers to the next node in each element, resulting in increased memory overhead compared to arrays.
+- It's is vulnerable to data loss if a node’s next pointer is lost or corrupted, as there is no way to traverse the list and access other elements.
+- It's is not suitable for parallel processing, as updating a node requires exclusive access to its next pointer, which cannot be easily done in a parallel environment.
+- It does not support backward traversing.
 
 ## Usage
 
 - Used to implement memory pools, in which memory is allocated and deallocated as needed.
-- Used to implement linked lists in databases, allowing for fast insertion and deletion operations.
+- Used to implement linked list in databases, allowing for fast insertion and deletion operations.
 - Used to efficiently represent polynomials and sparse matrices, where most elements are zero.
 - Used in operating systems for tasks such as scheduling processes and managing system resources.
 
