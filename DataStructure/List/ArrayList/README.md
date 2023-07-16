@@ -1,5 +1,7 @@
 # Array list
 
+## Implementations
+
 - [Static array list][static_arraylist_link]
 - [Dynamic array][dynamic_array_link]
 
