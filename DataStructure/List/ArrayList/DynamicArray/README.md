@@ -22,10 +22,10 @@
 - Unpredictable performance when insertion or removal requires resizing.
 - In a highly fragmented memory region, it may be expensive or impossible to find contiguous space for a large dynamic array.
 
-## Used when
-- the maximum logical size is unknown, or difficult to calculate, before the array is allocated.
-- it is considered that a maximum logical size given by a specification is likely to change.
-- the amortized cost of resizing a dynamic array does not significantly affect performance or responsiveness.
+## Usage
+- When the maximum logical size is unknown, or difficult to calculate, before the array is allocated.
+- When it is considered that a maximum logical size given by a specification is likely to change.
+- When the amortized cost of resizing a dynamic array does not significantly affect performance or responsiveness.
 
 # References
 
