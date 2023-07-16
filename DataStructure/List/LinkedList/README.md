@@ -10,12 +10,24 @@
 - Various advanced data structures can be implemented using a linked list like a stack, queue, graph, hash maps, etc.
 
 ## Cons
+
 - Unlike array, linked list do not allow direct access to elements by index. Traversal is required to reach a specific node.
 - Linked list requires additional memory for storing the pointers, compared to arrays.
+
+## Implementations
+
+- [Singly linked list][sinlgy_linked_list_link]
+- [Doubly linked list][doubly_linked_list_link]
+- [Circular linked list][circular_linked_list_link]
 
 ### References
 
 - 윤성우, <윤성우의 열혈 자료구조>
-- [GeeksforGeeks](https://www.geeksforgeeks.org/what-is-linked-list/)
+- [GeeksforGeeks][reference_link_0]
+
+[sinlgy_linked_list_link]: <./SinglyLinkedList>
+[doubly_linked_list_link]: <./DoublyLinkedList>
+[circular_linked_list_link]: <./CircularLinkedList>
+[reference_link_0]: https://www.geeksforgeeks.org/what-is-linked-list/
 
 [^linked_list_definition]: <https://www.geeksforgeeks.org/what-is-linked-list/>
