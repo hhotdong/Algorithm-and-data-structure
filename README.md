@@ -11,10 +11,10 @@
 - [List][list_link]
 - [Set][set_link]
 
-[big_o_link]: </Algorithm/BigONotation/README.md>
-[binary_search_link]: </Algorithm/BinarySearch/README.md>
-[adt_link]: </DataStructure/README.md>
-[stack_link]: </DataStructure/Stack/README.md>
-[queue_link]: </DataStructure/Queue/README.md>
-[list_link]: </DataStructure/List/README.md>
-[set_link]: </DataStructure/Set/README.md>
+[big_o_link]: </Algorithm/BigONotation>
+[binary_search_link]: </Algorithm/BinarySearch>
+[adt_link]: </DataStructure>
+[stack_link]: </DataStructure/Stack>
+[queue_link]: </DataStructure/Queue>
+[list_link]: </DataStructure/List>
+[set_link]: </DataStructure/Set>
