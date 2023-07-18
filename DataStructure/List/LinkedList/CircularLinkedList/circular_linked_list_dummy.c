@@ -37,7 +37,7 @@ void ListInsertFront(List * plist, Data data)
 
 int ListFirst(List * plist, Data * pdata)
 {
-    if (plist->tail->next == plist->tail)
+    if (plist->tail == plist->tail->next)
         return FALSE;
 
     plist->prev = plist->tail->next;
@@ -49,6 +49,9 @@ int ListFirst(List * plist, Data * pdata)
 
 int ListNext(List * plist, Data * pdata)
 {
+    if (plist->tail == plist->tail->next)
+        return FALSE;
+
     plist->prev = plist->cur;
     plist->cur = plist->cur->next;
 
@@ -59,6 +62,19 @@ int ListNext(List * plist, Data * pdata)
     return TRUE;
 }
 
+/*
+ P   C
+[D]-[0]
+
+    P,C
+[D]-[0]
+
+     P   C
+[D]-[0]-[1]
+
+     C   P
+[D]-[0]-[1]
+*/
 Data ListRemove(List * plist)
 {
     Node * delNode = plist->cur;
