@@ -1,6 +1,27 @@
 #include <stdlib.h>  // malloc, free
 #include "circular_linked_list.h"
 
+/*
+ P   C
+[D]-[0]
+
+ P   C
+[D]-[0]-[1]
+
+     P   C
+[D]-[0]-[1]
+
+ P   C
+[D]-[0]-[1]-[2]
+
+     P   C
+[D]-[0]-[1]-[2]
+ 
+         P   C
+[D]-[0]-[1]-[2]
+
+*/
+
 void ListInit(List * plist)
 {
     plist->tail = (Node*)malloc(sizeof(Node));
@@ -56,44 +77,26 @@ int ListNext(List * plist, Data * pdata)
     plist->cur = plist->cur->next;
 
     if (plist->cur == plist->tail->next)
+    {
+        plist->prev = plist->tail->next;
         plist->cur = plist->tail->next->next;
+    }
 
     *pdata = plist->cur->data;
     return TRUE;
 }
 
-/*
- P   C
-[D]-[0]
-
-    P,C
-[D]-[0]
-
-     P   C
-[D]-[0]-[1]
-
-     C   P
-[D]-[0]-[1]
-*/
 Data ListRemove(List * plist)
 {
     Node * delNode = plist->cur;
     Data delData = delNode->data;
-
-    if (delNode == plist->tail->next->next)
-        plist->tail->next->next = delNode->next;
-    else
-        plist->prev->next = delNode->next;
-
-    if (delNode == plist->tail)
-    {
-        if (plist->prev == plist->tail)
-            plist->tail = plist->tail->next;
-        else
-            plist->tail = plist->prev;
-    }
-
+    
+    plist->prev->next = delNode->next;
     plist->cur = plist->prev;
+    
+    if (delNode == plist->tail)
+        plist->tail = plist->prev;
+    
     free(delNode);
     (plist->numOfData)--;
     return delData;
