@@ -20,6 +20,8 @@
 - [Doubly linked list][doubly_linked_list_link]
 - [Circular linked list][circular_linked_list_link]
 
+<img src="./images/list_diagram.jpg" alt="drawing" title="From National University of Singapore" width="800"/>
+
 ### References
 
 - 윤성우, <윤성우의 열혈 자료구조>
