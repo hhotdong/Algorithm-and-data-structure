@@ -20,7 +20,7 @@
 ## Note
 
 - If you want to retain the order of added elements in singly linked list, new node must be added to tail and it requires a pointer to tail.[^pointer_to_tail]
-- Dummy node makes it possible to handle the first node(after dummy node) consistently with the following nodes.[^dummy_node_1] Furthermore, it's comfortable to remove an element at certain index by tracking the previous node as well as the current node.[^dummy_node_2]
+- In singly linked list, dummy node makes it possible to handle the first node(after dummy node) consistently with the following nodes.[^dummy_node_1] Furthermore, it's comfortable to remove an element at certain index by tracking the previous node as well as the current node.[^dummy_node_2]
 
 ### References
 
