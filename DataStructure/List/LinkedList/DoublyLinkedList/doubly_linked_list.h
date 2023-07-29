@@ -27,6 +27,12 @@ void ListInit(List * plist);
 
 void ListInsert(List * plist, Data data);
 
+void ListInsertFront(List * plist, Data data);
+
+int ListInsertAt(List * plist, Data data, int idx);
+
+Node * ListGetAt(List * plist, int idx);
+
 int ListFirst(List * plist, Data * pdata);
 
 int ListNext(List * plist, Data * pdata);

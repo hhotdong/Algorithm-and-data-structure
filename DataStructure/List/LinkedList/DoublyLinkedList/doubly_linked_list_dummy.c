@@ -26,7 +26,63 @@ void ListInsert(List * plist, Data data)
     plist->tail->prev->next = newNode;
     plist->tail->prev = newNode;
     
-    (plist->numOfData)++;
+    ++(plist->numOfData);
+}
+
+void ListInsertFront(List * plist, Data data)
+{
+    Node * newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+
+    newNode->prev = plist->head;
+    newNode->next = plist->head->next;
+
+    plist->head->next->prev = newNode;
+    plist->head->next = newNode;
+
+    ++(plist->numOfData);
+}
+
+int ListInsertAt(List * plist, Data data, int idx)
+{
+    int i = 0;
+    Node * cur = plist->head->next;
+    while (cur != plist->tail)
+    {
+        if (i == idx)
+        {
+            Node * newNode = (Node*)malloc(sizeof(Node));
+            newNode->data = data;
+            
+            newNode->prev = cur->prev;
+            newNode->next = cur;
+
+            cur->prev->next = newNode;
+            cur->prev = newNode;
+
+            ++(plist->numOfData);
+            return i;
+        }
+        ++i;
+        cur = cur->next;
+    }
+    
+    ListInsert(plist, data);
+    return i;
+}
+
+Node * ListGetAt(List * plist, int idx)
+{
+    int i = 0;
+    Node * cur = plist->head->next;
+    while (cur != plist->tail)
+    {
+        if (i == idx)
+            return cur;
+        ++i;
+        cur = cur->next;
+    }
+    return NULL;
 }
 
 int ListFirst(List * plist, Data * pdata)
