@@ -1,11 +1,11 @@
 # Static array list
 
-| Operations       | Time complexity |
-| :--------------: | :-------------: |
-| Access           | O(1)            |
-| Add/Remove       | O(n)            |
-| Add/Remove first | O(n)            |
-| Add/Remove last  | O(1)            |
+| Operations | Time complexity(worst case) |
+| :--------: | :-------------------------: |
+| Access     | O(1)                        |
+| Search     | O(n)                        |
+| Insert     | O(n)[^insert_delete_time]   |
+| Delete     | O(n)[^insert_delete_time]   |
 
 ## Pros
 
@@ -34,6 +34,7 @@
 [reference_link_0]: <https://isaaccomputerscience.org/concepts/dsa_datastruct_list?examBoard=all&stage=all>
 [reference_link_1]: <https://en.wikipedia.org/wiki/Dynamic_array#cite_note-27>
 
+[^insert_delete_time]: It takes O(1) at tail.
 [^static_arraylist_pros_0]: Because access by index is internally [address of first member] + [offset] as well as good cache performance.
 [^static_arraylist_pros_1]: It benefits from processor caching. Furthermore, it needs only simple calculation to find out the mid-point of array so that allows you to implement efficient sorting and searching algorithms, for example a binary seach or merge sort.
 [^static_arraylist_pros_2]: When capacity has been reached, resizing is needed and it takes O(n).
