@@ -1,58 +1,78 @@
 #include <stdlib.h>
+#include <string.h>
 #include "doubly_linked_list.h"
 
-void ListInit(List * plist)
+void ListInit(List * pList, const char * (*pfGetKey)(void *))
 {
-    plist->head = (Node*)malloc(sizeof(Node));
-    plist->tail = (Node*)malloc(sizeof(Node));
+    pList->head = (Node*)malloc(sizeof(Node));
+    pList->tail = (Node*)malloc(sizeof(Node));
 
-    plist->head->next = plist->tail;
-    plist->head->prev = NULL;
+    pList->head->next = pList->tail;
+    pList->head->prev = NULL;
 
-    plist->tail->next = NULL;
-    plist->tail->prev = plist->head;
+    pList->tail->next = NULL;
+    pList->tail->prev = pList->head;
 
-    plist->numOfData = 0;
+    pList->numOfData = 0;
+    pList->pfGetKey = pfGetKey;
 }
 
-void ListInsert(List * plist, Data data)
+void ListRelease(List * pList)
+{
+    Node * cur = pList->head->next;
+    while (cur != pList->tail)
+    {
+        Node * delNode = cur;
+        cur = cur->next;
+        
+        free(delNode->pData);
+        free(delNode);
+    }
+    pList->head->next = pList->tail;
+    pList->tail->prev = pList->head;
+    pList->cur = NULL;
+    pList->pfGetKey = NULL;
+    pList->numOfData = 0;
+}
+
+void ListInsert(List * pList, void * pData)
 {
     Node * newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = data;
+    newNode->pData = pData;
     
-    newNode->prev = plist->tail->prev;
-    newNode->next = plist->tail;
+    newNode->prev = pList->tail->prev;
+    newNode->next = pList->tail;
 
-    plist->tail->prev->next = newNode;
-    plist->tail->prev = newNode;
+    pList->tail->prev->next = newNode;
+    pList->tail->prev = newNode;
     
-    ++(plist->numOfData);
+    ++(pList->numOfData);
 }
 
-void ListInsertFront(List * plist, Data data)
+void ListInsertFront(List * pList, void* pData)
 {
     Node * newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = data;
+    newNode->pData = pData;
 
-    newNode->prev = plist->head;
-    newNode->next = plist->head->next;
+    newNode->prev = pList->head;
+    newNode->next = pList->head->next;
 
-    plist->head->next->prev = newNode;
-    plist->head->next = newNode;
+    pList->head->next->prev = newNode;
+    pList->head->next = newNode;
 
-    ++(plist->numOfData);
+    ++(pList->numOfData);
 }
 
-int ListInsertAt(List * plist, Data data, int idx)
+int ListInsertAt(List * pList, void * pData, int idx)
 {
     int i = 0;
-    Node * cur = plist->head->next;
-    while (cur != plist->tail)
+    Node * cur = pList->head->next;
+    while (cur != pList->tail)
     {
         if (i == idx)
         {
             Node * newNode = (Node*)malloc(sizeof(Node));
-            newNode->data = data;
+            newNode->pData = pData;
             
             newNode->prev = cur->prev;
             newNode->next = cur;
@@ -60,22 +80,34 @@ int ListInsertAt(List * plist, Data data, int idx)
             cur->prev->next = newNode;
             cur->prev = newNode;
 
-            ++(plist->numOfData);
+            ++(pList->numOfData);
             return i;
         }
         ++i;
         cur = cur->next;
     }
     
-    ListInsert(plist, data);
+    ListInsert(pList, pData);
     return i;
 }
 
-Node * ListGetAt(List * plist, int idx)
+Node * ListFindNode(List * pList, const char * pKey)
+{
+    Node * cur = pList->head->next;
+    while (cur != pList->tail)
+    {
+        if (strcmp(pList->pfGetKey(cur->pData), pKey) == 0)
+            return cur;
+        cur = cur->next;
+    }
+    return NULL;
+}
+
+Node * ListGetAt(List * pList, int idx)
 {
     int i = 0;
-    Node * cur = plist->head->next;
-    while (cur != plist->tail)
+    Node * cur = pList->head->next;
+    while (cur != pList->tail)
     {
         if (i == idx)
             return cur;
@@ -85,52 +117,78 @@ Node * ListGetAt(List * plist, int idx)
     return NULL;
 }
 
-int ListFirst(List * plist, Data * pdata)
+int ListFirst(List * pList, void ** pData)
 {
-   if (plist->head->next == plist->tail)
+   if (pList->head->next == pList->tail)
        return FALSE;
 
-   plist->cur = plist->head->next;
-   *pdata = plist->cur->data;
+   pList->cur = pList->head->next;
+   *pData = pList->cur->pData;
    return TRUE;
 }
 
-int ListNext(List * plist, Data * pdata)
+int ListNext(List * pList, void ** pData)
 {
-    if (plist->cur->next == plist->tail)
+    if (pList->cur->next == pList->tail)
         return FALSE;
 
-    plist->cur = plist->cur->next;
-    *pdata = plist->cur->data;
+    pList->cur = pList->cur->next;
+    *pData = pList->cur->pData;
     return TRUE;
 }
 
-int ListPrevious(List * plist, Data * pdata)
+int ListPrevious(List * pList, void ** pData)
 {
-    if (plist->cur->prev == plist->head)
+    if (pList->cur->prev == pList->head)
         return FALSE;
     
-    plist->cur = plist->cur->prev;
-    *pdata = plist->cur->data;
+    pList->cur = pList->cur->prev;
+    *pData = pList->cur->pData;
     return TRUE;
 }
 
-Data ListRemove(List * plist)
+void * ListRemove(List * pList)
 {
-    Node * delNode = plist->cur;
-    Data delData = delNode->data;
+    Node * delNode = pList->cur;
+    void * delData = delNode->pData;
 
     delNode->next->prev = delNode->prev;
     delNode->prev->next = delNode->next;
 
-    plist->cur = plist->cur->prev;
+    pList->cur = pList->cur->prev;
 
     free(delNode);
-    (plist->numOfData)--;
+    (pList->numOfData)--;
     return delData;
 }
 
-int ListCount(List * plist)
+int ListRemoveNode(List * pList, const char * pKey)
 {
-    return plist->numOfData;
+    int i = 0;
+    void * pData = NULL;
+
+    if (ListFirst(pList, &pData))
+    {
+        if (strcmp(pList->pfGetKey(pList->cur->pData), pKey) == 0)
+        {
+            free(ListRemove(pList));
+            return i;
+        }
+        
+        while (ListNext(pList, &pData))
+        {
+            ++i;
+            if (strcmp(pList->pfGetKey(pList->cur->pData), pKey) == 0)
+            {
+                free(ListRemove(pList));
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+int ListCount(List * pList)
+{
+    return pList->numOfData;
 }

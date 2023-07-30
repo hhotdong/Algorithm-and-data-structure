@@ -4,11 +4,9 @@
 #define TRUE  1
 #define FALSE 0
 
-typedef int Data;
-
 typedef struct _node
 {
-    Data data;
+    void * pData;
     struct _node * next;
     struct _node * prev;
 } Node;
@@ -19,28 +17,35 @@ typedef struct _doublyLinkedList
     Node * tail;
     Node * cur;
     int numOfData;
+    const char * (*pfGetKey) (void *);
 } DoublyLinkedList;
 
 typedef DoublyLinkedList List;
 
-void ListInit(List * plist);
+void ListInit(List * plist, const char * (*pfGetKey)(void *));
 
-void ListInsert(List * plist, Data data);
+void ListRelease(List * pList);
 
-void ListInsertFront(List * plist, Data data);
+void ListInsert(List * pList, void * pData);
 
-int ListInsertAt(List * plist, Data data, int idx);
+void ListInsertFront(List * pList, void * pData);
 
-Node * ListGetAt(List * plist, int idx);
+int ListInsertAt(List * pList, void * pData, int idx);
 
-int ListFirst(List * plist, Data * pdata);
+Node * ListFindNode(List * pList, const char * pKey);
 
-int ListNext(List * plist, Data * pdata);
+Node * ListGetAt(List * pList, int idx);
 
-int ListPrevious(List * plist, Data * pdata);
+int ListFirst(List * pList, void ** pData);
 
-Data ListRemove(List * plist);
+int ListNext(List * pList, void ** pData);
 
-int ListCount(List * plist);
+int ListPrevious(List * pList, void ** pData);
+
+void * ListRemove(List * pList);
+
+int ListRemoveNode(List * pList, const char * pKey);
+
+int ListCount(List * pList);
 
 #endif  // _DOUBLY_LINKED_LIST_H_
