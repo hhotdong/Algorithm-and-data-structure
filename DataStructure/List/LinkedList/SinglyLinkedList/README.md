@@ -2,6 +2,13 @@
 
 > "A singly linked list is a special type of linked list in which each node has only one link that points to the next node in the linked list."[^singly_linked_list_definition]
 
+| Operations | Time complexity(worst case) |
+| :------:   | :-------------------------: |
+| Access     | O(n)                        |
+| Search     | O(n)                        |
+| Insertion  | O(n)                        |
+| Deletion   | O(n)                        |
+
 ## Cons
 
 - Accessing an element in a singly linked list requires traversing the list from the head to the desired node, making it slow for random access operations compared to arrays.
