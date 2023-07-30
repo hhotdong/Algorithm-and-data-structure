@@ -1,5 +1,7 @@
 # Array list
 
+> Data is allocated in array(contiguous space).
+
 ## Implementations
 
 - [Static array list][static_arraylist_link]
