@@ -2,6 +2,13 @@
 
 > "Linked list is a linear data structure, in which elements are not stored at a contiguous location, rather they are linked using pointers. Linked list forms a series of connected nodes, where each node stores the data and the address of the next node."[^linked_list_definition]
 
+| Operations | Time complexity(worst case) |
+| :------:   | :-------------------------: |
+| Access     | O(n)                        |
+| Search     | O(n)                        |
+| Insertion  | O(n)[^searching_time]       |
+| Deletion   | O(n)[^searching_time]       |
+
 ## Pros
   
 - The size of memory can be allocated or de-allocated at run time based on the operation insertion or deletion. Therefore linked list is useful when the size of the list is not known in advance.
@@ -33,3 +40,4 @@
 [reference_link_0]: https://www.geeksforgeeks.org/what-is-linked-list/
 
 [^linked_list_definition]: <https://www.geeksforgeeks.org/what-is-linked-list/>
+[^searching_time]: It takes time to search the specific position to insert or delete. If insertion/deletion occurs at both ends(head or tail) of the list, it takes O(1) specifically in doubly linked list(only head in singly linked list).
