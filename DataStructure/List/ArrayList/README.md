@@ -1,6 +1,6 @@
 # Array list
 
-> Data is allocated in array(contiguous space).
+> Data is arranged in contiguous space using array.
 
 ## Implementations
 
