@@ -3,7 +3,7 @@
 | Operations | Time complexity(worst case) |
 | :--------: | :-------------------------: |
 | Access     | O(1)                        |
-| Search     | O(n)                        |
+| Traverse   | O(n)                        |
 | Insert     | O(n)[^amortized_time]       |
 | Delete     | O(n)[^amortized_time]       |
 
