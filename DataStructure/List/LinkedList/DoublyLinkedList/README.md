@@ -18,6 +18,7 @@
 ### References
 
 - 윤성우, <윤성우의 열혈 자료구조>
+- [널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1AiEXL3Xfy6yEZ7k2TL4rxy)
 - [Wikipedia][reference_0]
 - [GeeksForGeeks][reference_1]
 
