@@ -25,6 +25,7 @@
 ### References
 
 - 윤성우, <윤성우의 열혈 자료구조>
+- [널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1AiEXL3Xfy6yEZ7k2TL4rxy)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/singly-linked-list-definition-meaning-dsa/)
 
 [^singly_linked_list_definition]: https://www.geeksforgeeks.org/singly-linked-list-definition-meaning-dsa/
