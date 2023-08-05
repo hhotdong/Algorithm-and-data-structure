@@ -28,19 +28,24 @@ static inline unsigned char S_to_binary_(const char *s)
 
 int ContainsColor(unsigned char pixel, unsigned char color)
 {
-    for (int i = 0; i < 4; ++i)
-    {
-        pixel >>= 2*i;
-        if ((pixel & 0x03) == color)
-            return 1;
-    }
-    return 0;
+   unsigned char tmp = ~(pixel ^ color);
+   unsigned char mask = 0xAA;  // 10101010
+   return (tmp & ((tmp & mask) >> 1));
 }
 
 void TestColor(unsigned char pixel, unsigned char color)
 {
+    unsigned char testingColor = 0;
+    for (int i = 0; i < 4; ++i)
+    {
+        testingColor <<= 2;
+        testingColor |= color;
+    }
+
+    int result = ContainsColor(pixel, testingColor);
+
     printf("Test color: pixel(" BYTE_TO_BINARY_PATTERN "), color(" BYTE_TO_BINARY_PATTERN "), result(%s)\n",
-        BYTE_TO_BINARY(pixel), BYTE_TO_BINARY(color), ContainsColor(pixel, color) ? "true" : "false");
+        BYTE_TO_BINARY(pixel), BYTE_TO_BINARY(color), result ? "true" : "false");
 }
 
 int main(void)
