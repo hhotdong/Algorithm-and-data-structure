@@ -10,26 +10,25 @@
 #include <stdlib.h>
 #include <string.h>
 
+// The "max" value is never included in the rectangle, because you want the ability to specify abutting rectangles
+// with no gap which do not both write to the same row/column. So by convention, all intervals are "min included, max not". - Casey
 void CopyRect(char * bufferA, int pitchA, char * bufferB, int pitchB,
               int fromMinX, int fromMinY, int fromMaxX, int fromMaxY,
               int toMinX, int toMinY)
 {
-    int bPos = pitchB * toMinY + toMinX;
-    for (int ay = fromMinY; ay <= fromMaxY; ++ay)
+    char *source = bufferA + fromMinY * pitchA + fromMinX;
+    char *dest   = bufferB + toMinY   * pitchB + toMinX;
+
+    int width  = fromMaxX - fromMinX;
+    int height = fromMaxY - fromMinY;
+
+    for(int y = 0; y < height; y++)
     {
-        for (int ax = fromMinX; ax <= fromMaxX; ++ax)
-        {
-            int aPos = pitchA * ay + ax;
-            bufferB[bPos] = bufferA[aPos];
-            ++bPos;
-        }
-        
-        int width = fromMaxX - fromMinX + 1;
-        if (pitchB > width)
-            bPos = bPos + pitchB - width;
-        else
-            bPos = bPos + pitchB;
-    }
+        for(int x = 0; x < width; x++)
+            dest[x] = source[x];
+        source += pitchA;
+        dest   += pitchB;
+    }    
 }
 
 void TestCopyRect(int row, int col)
@@ -69,7 +68,7 @@ void TestCopyRect(int row, int col)
     printf("\n");
 
     printf("Copy rectangle located at (3,3) in Buffer A.\nPaste it to the point located at (2,5) in Buffer B.\n\n");
-    CopyRect(bufA[0], 10, bufB[0], col, 3, 3, 6, 6, 2, 5);
+    CopyRect(bufA[0], 10, bufB[0], col, 3, 3, 7, 7, 2, 5);
     
     printf("Buffer B\n");
     for (int j = 0; j < row; ++j)

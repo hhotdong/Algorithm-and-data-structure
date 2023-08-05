@@ -1,16 +1,13 @@
-// https://www.computerenhance.com/p/the-four-programming-questions-from?triedSigningIn=true
+// https://www.computerenhance.com/p/microsoft-intern-interview-question-ab7
 #include <stdio.h>
 
 void CopyString(char * from, char * to)
 {
-    int i = 0;
-    char * cur = from;
-    while (*(cur + i) != '\0')
-    {
-        *(to + i) = *(cur + i);
-        ++i;
-    }
-    *(to + i) = '\0';
+    // First impl.
+    for (int i = 0; to[i] = from[i]; ++i);
+
+    // Second impl. Works samely but results in different ASM than first.
+    //while (*to++ = *from++);
 }
 
 void TestCopyString()
