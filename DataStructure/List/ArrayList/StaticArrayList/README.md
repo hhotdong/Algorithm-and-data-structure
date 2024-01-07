@@ -24,7 +24,7 @@
 
 - When the maximum logical size is fixed(e.g. by specification), or can be calculated before the array is allocated.
 
-# References
+## References
 
 - 윤성우, <윤성우의 열혈 자료구조>
 - [isaaccomputerscience][reference_link_0]
