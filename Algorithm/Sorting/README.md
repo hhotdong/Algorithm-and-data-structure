@@ -1,17 +1,26 @@
 ## Performance
 
-| --- Sorting algorithm --- | --- Comparision --- | --- Assignment(worst|best) --- |
-| Bubble sort               | O(n^2)              | O(n^2) | O(1)  |
-| Selection sort            | O(n^2)              | O(n) | O(n)    |
-| Insertion sort            | O(n^2) |  O(n)      | O(n^2) | O(n)         |
+| Sorting algorithm  | Comparision(worst, best)            | Assignment(worst, best) | Stability[^def_stability] |
+| :----------------- | :---------------------------------- | :---------------------- | :------------------------ |
+| Selection          | O(n<sup>2</sup>), O(n<sup>2</sup>)  | O(n), O(n)              | X                         |
+| Bubble             | O(n<sup>2</sup>), O(n<sup>2</sup>)  | O(n<sup>2</sup>), O(1)  | O                         |
+| Insertion          | O(n<sup>2</sup>), O(n)              | O(n<sup>2</sup>), O(n)  | O                         |
 
 ## Note
 
-- 버블 정렬은 최악의 경우 데이터 이동횟수가 비교횟수보다 3배 더 많다. 값의 교환 과정에서 대입 연산이 3회 진행되기 때문이다.
-- 최악의 경우를 놓고 보면 버블 정렬보다 선택 정렬에 좋은 성능을 기대할 수 있겠지만, 버블 정렬은 최선의 경우에 단 한 번의 데이터 이동도 발생하지 않는다는 점과, 실제로 데이터들이 늘 최악의 상황으로 배치되지는 않는다는 사실을 감안하면, 이 둘의 우열을 가리는 것은 무의미하다고 할 수 있다.
-- 삽입 정렬은 정렬대상의 대부분이 이미 정렬되어 있는 경우 매우 빠르게 동작한다.
+- Selection sort may seem to perform better than buble sort in worst case. However, it's meaningless to compare those because bubble sort makes no assignment in best case. Furthermore, input data isn't always arranged worstly.
 
+- Bubble sort can be faster in best case by implementing with a boolean flag to check if the input data is sorted every for-loop and exits early before all for-loops are performed. This kind of optimization cannot be applied to selection sort.
+
+- Insertion sort performs fast when the most of input data is already sorted.
+
+- In worst case, assignment operation is performed 3 times more than comparison operation because it requires 3 assignments to swap elements. In Big-O notation, this amount of difference is ignored.
+
+?? 버블정렬의 swap은 3회의 대입연산을 수행하는데 비해 삽입정렬의 shift는 1회의 대입연산을 수행한다.
 
 ### Reference
 
 - 윤성우, <윤성우의 열혈 자료구조>
+- 홍정모, <자료구조 압축코스>
+
+[^def_stability]: "A sorting algorithm is stable if it keeps the relative order of equal elements." - https://www.baeldung.com/cs/selection-sort-stable
