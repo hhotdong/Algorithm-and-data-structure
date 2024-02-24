@@ -1,7 +1,6 @@
 // Credit: 홍정모 교수님의 <자료구조 압축코스>
 #include <iostream>
 
-// unstable: 정렬이 수행될 때 정렬 기준이 같은 원소들 간의 기존 정렬 순서가 보장되지 않는다.
 void SelectionSort(int arr[], int len)
 {
     for (int i = 0; i < len - 1; ++i)

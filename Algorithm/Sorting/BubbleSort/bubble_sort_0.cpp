@@ -1,8 +1,6 @@
 // Credit: 홍정모 교수님의 <자료구조 압축코스>
 #include <iostream>
 
-// BestCase(이미 정렬되어 있거나 대부분 정렬되어 있는 경우)에서 버블정렬의 연산횟수는 선택정렬에 비해 적다.
-// stable: 정렬이 수행돼도 정렬 기준이 같은 원소들 간의 정렬 순서는 보장된다.
 void BubbleSort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; ++i)
