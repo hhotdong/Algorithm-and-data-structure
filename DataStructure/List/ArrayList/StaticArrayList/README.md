@@ -27,6 +27,7 @@
 ## References
 
 - 윤성우, <윤성우의 열혈 자료구조>
+- 홍정모 연구소, <자료구조 압축코스>
 - [isaaccomputerscience][reference_link_0]
 - [Wikipedia][reference_link_1]
 - https://stackoverflow.com/questions/35401508/dynamic-array-vs-linked-list-in-c
@@ -35,7 +36,7 @@
 [reference_link_1]: <https://en.wikipedia.org/wiki/Dynamic_array#cite_note-27>
 
 [^insert_delete_time]: It takes O(1) at tail.
-[^static_arraylist_pros_0]: Because access by index is internally [address of first member] + [offset] as well as good cache performance.
+[^static_arraylist_pros_0]: Because access by index is internally [address of first member] + [offset] as well as good cache performance. In fact, CPU doesn't fetches only memories we actually need but also the near ones in accordance with memory bandwith and store in cache memory. It can be accessed fast when we need.
 [^static_arraylist_pros_1]: It benefits from processor caching. Furthermore, it needs only simple calculation to find out the mid-point of array so that allows you to implement efficient sorting and searching algorithms, for example a binary seach or merge sort.
 [^static_arraylist_pros_2]: When capacity has been reached, resizing is needed and it takes O(n).
 [^static_arraylist_cons_0]: In other words, capacity is fixed and data cannot be added when array is full.
