@@ -1,4 +1,4 @@
-#include "heap.h"
+#include "../../Heap/heap.h"
 
 typedef Heap PriorityQueue;
 typedef HData PriorityQueueData;
