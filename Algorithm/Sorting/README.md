@@ -21,6 +21,6 @@
 ### Reference
 
 - 윤성우, <윤성우의 열혈 자료구조>
-- 홍정모, <자료구조 압축코스>
+- 홍정모 연구소, <자료구조 압축코스>
 
 [^def_stability]: "A sorting algorithm is stable if it keeps the relative order of equal elements." - https://www.baeldung.com/cs/selection-sort-stable
