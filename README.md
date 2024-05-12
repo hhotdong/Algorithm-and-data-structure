@@ -17,6 +17,7 @@
 - [Stack][stack_link]
 - [Queue][queue_link]
 - [Tree][tree_link]
+- [Heap][heap_link]
 - [Set][set_link]
 
 [big_o_link]: </Algorithm/BigONotation>
@@ -26,5 +27,6 @@
 [list_link]: </DataStructure/List>
 [stack_link]: </DataStructure/Stack>
 [queue_link]: </DataStructure/Queue>
+[heap_link]: </DataStructure/Heap>
 [tree_link]: </DataStructure/Tree>
 [set_link]: </DataStructure/Set>
