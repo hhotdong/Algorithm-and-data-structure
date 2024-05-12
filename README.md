@@ -19,6 +19,8 @@
 - [Tree][tree_link]
 - [Heap][heap_link]
 - [Set][set_link]
+- [Matrix][matrix_link]
+- [Polynomial][polynomial_link]
 
 [big_o_link]: </Algorithm/BigONotation>
 [binary_search_link]: </Algorithm/BinarySearch>
@@ -30,3 +32,5 @@
 [heap_link]: </DataStructure/Heap>
 [tree_link]: </DataStructure/Tree>
 [set_link]: </DataStructure/Set>
+[matrix_link]: </DataStructure/Matrix>
+[polynomial_link]: </DataStructure/Polynomial>
