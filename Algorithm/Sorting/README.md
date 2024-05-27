@@ -1,10 +1,12 @@
 ## Performance
 
-| Sorting algorithm  | Comparision(worst, best)            | Assignment(worst, best) | Stability[^def_stability] |
-| :----------------- | :---------------------------------- | :---------------------- | :------------------------ |
-| Selection          | O(n<sup>2</sup>), O(n<sup>2</sup>)  | O(n), O(n)              | X                         |
-| Bubble             | O(n<sup>2</sup>), O(n<sup>2</sup>)  | O(n<sup>2</sup>), O(1)  | O                         |
-| Insertion          | O(n<sup>2</sup>), O(n)              | O(n<sup>2</sup>), O(n)  | O                         |
+| Sorting algorithm  | Comparision(worst, best)                   | Assignment(worst, best)                    | Memory    | Stability[^def_stability] |
+| :----------------- | :----------------------------------------- | :----------------------------------------- | :-------- | :------------------------ |
+| Selection          | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n), O(n)                                 | O(1)      | X                         |
+| Bubble             | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n<sup>2</sup>), O(1)                     | O(1)      | O                         |
+| Insertion          | O(n<sup>2</sup>), O(n)                     | O(n<sup>2</sup>), O(n)                     | O(1)      | O                         |
+| Heap               | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(1)      | X                         |
+| Merge              | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(n)      | O                         |
 
 ## Note
 
@@ -12,11 +14,13 @@
 
 - Bubble sort can be faster in best case by implementing with a boolean flag to check if the input data is sorted every for-loop and exits early before all for-loops are performed. This kind of optimization cannot be applied to selection sort.
 
+- Swap in bubble sort performs 3 assignments, on the other hand, shift in insertion sort performs 1 assignment.
+
 - Insertion sort performs fast when the most of input data is already sorted.
 
-- In worst case, assignment operation is performed 3 times more than comparison operation because it requires 3 assignments to swap elements. In Big-O notation, this amount of difference is ignored.
+- Merge sort of array based implementation requires extra memories, but it's not applied to linked list based implementation.
 
-?? 버블정렬의 swap은 3회의 대입연산을 수행하는데 비해 삽입정렬의 shift는 1회의 대입연산을 수행한다.
+- In worst case, assignment operation is performed 3 times more than comparison operation because it requires 3 assignments to swap elements. In Big-O notation, this amount of difference is ignored.
 
 ### Reference
 
