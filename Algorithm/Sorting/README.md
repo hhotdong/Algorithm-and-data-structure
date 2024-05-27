@@ -1,12 +1,13 @@
 ## Performance
 
-| Sorting algorithm  | Comparision(worst, best)                   | Assignment(worst, best)                    | Memory    | Stability[^def_stability] |
-| :----------------- | :----------------------------------------- | :----------------------------------------- | :-------- | :------------------------ |
-| Selection          | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n), O(n)                                 | O(1)      | X                         |
-| Bubble             | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n<sup>2</sup>), O(1)                     | O(1)      | O                         |
-| Insertion          | O(n<sup>2</sup>), O(n)                     | O(n<sup>2</sup>), O(n)                     | O(1)      | O                         |
-| Heap               | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(1)      | X                         |
-| Merge              | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(n)      | O                         |
+| Sorting algorithm  | Comparision(worst, best)                   | Assignment(worst, best)                    | Memory              | Stability[^def_stability] |
+| :----------------- | :----------------------------------------- | :----------------------------------------- | :------------------ | :------------------------ |
+| Selection          | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n), O(n)                                 | O(1)                | X                         |
+| Bubble             | O(n<sup>2</sup>), O(n<sup>2</sup>)         | O(n<sup>2</sup>), O(1)                     | O(1)                | O                         |
+| Insertion          | O(n<sup>2</sup>), O(n)                     | O(n<sup>2</sup>), O(n)                     | O(1)                | O                         |
+| Heap               | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(1)                | X                         |
+| Merge              | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(nlog<sub>2</sub>n), O(nlog<sub>2</sub>n) | O(n)                | O                         |
+| Quick              | O(nlog<sub>2</sub>n), O(n<sup>2</sup>)     | ?                                          | O(log<sub>2</sub>n) | X                         |
 
 ## Note
 
@@ -21,6 +22,8 @@
 - Merge sort of array based implementation requires extra memories, but it's not applied to linked list based implementation.
 
 - In worst case, assignment operation is performed 3 times more than comparison operation because it requires 3 assignments to swap elements. In Big-O notation, this amount of difference is ignored.
+
+- Quick sort is usually done in-place with O(log n) stack space.
 
 ### Reference
 
