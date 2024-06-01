@@ -1,4 +1,3 @@
-// 윤성우의 열혈 자료구조
 #include <stdio.h>
 
 void Swap(int arr[],  int idx1, int idx2)
@@ -29,13 +28,9 @@ int Partition(int arr[], int left, int right)
 {
     int pIdx  = MedianOfThree(arr, left, right);
     int pivot = arr[pIdx];
-    int low   = left + 1;
+    int low   = left;
     int high  = right;
 
-    // This implementation is based on the premise that the leftest element is selected as pivot.
-    // Therefore, ensure that the selected pivot is located at the leftest.
-    Swap(arr, left, pIdx);
- 
     printf("Pivot: %d\n", pivot);
     
     while (low <= high)
@@ -43,12 +38,13 @@ int Partition(int arr[], int left, int right)
         while (pivot >= arr[low] && low <= right)
             low++;
 
-        while (pivot <= arr[high] && high >= left + 1)
+        while (pivot <= arr[high] && high >= left)
             high--;
 
         if (low <= high)
             Swap(arr, low, high);
     }
+    if (high >= left)
     Swap(arr, left, high);
     return high;
 }
