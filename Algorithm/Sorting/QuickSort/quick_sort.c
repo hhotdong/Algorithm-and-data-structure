@@ -8,18 +8,42 @@ void Swap(int arr[],  int idx1, int idx2)
     arr[idx2] = temp;
 }
 
+// Use bubble sort
+int MedianOfThree(int arr[], int left, int right)
+{
+    int samples[3] = { left, (left + right) / 2, right };
+
+    if (arr[samples[0]] > arr[samples[1]])
+        Swap(samples, 0, 1);
+
+    if (arr[samples[1]] > arr[samples[2]])
+        Swap(samples, 1, 2);
+
+    if (arr[samples[0]] > arr[samples[1]])
+        Swap(samples, 0, 1);
+
+    return samples[1];
+}
+
 int Partition(int arr[], int left, int right)
 {
-    int pivot = arr[left];
+    int pIdx  = MedianOfThree(arr, left, right);
+    int pivot = arr[pIdx];
     int low   = left + 1;
     int high  = right;
 
+    // This implementation is based on the premise that the leftest element is selected as pivot.
+    // Therefore, ensure that the selected pivot is located at the leftest.
+    Swap(arr, left, pIdx);
+ 
+    printf("Pivot: %d\n", pivot);
+    
     while (low <= high)
     {
-        while (pivot > arr[low] && low <= right)
+        while (arr[pivot] >= arr[low] && low <= right)
             low++;
 
-        while (pivot < arr[high] && high >= (left + 1))
+        while (arr[pivot] <= arr[high] && high >= left + 1)
             high--;
 
         if (low <= high)
@@ -41,7 +65,7 @@ void QuickSort(int arr[], int left, int right)
 
 int main(void)
 {
-    int arr[7] = { 3, 2, 4, 1, 7, 6, 5 };
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
 
     int len = sizeof(arr) / sizeof(int);
     int i;
