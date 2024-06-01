@@ -1,76 +1,60 @@
+// Credit: https://www.geeksforgeeks.org/quick-sort/?ref=lbp, contributed By Diwakar Jha
 #include <stdio.h>
 
-void Swap(int arr[],  int idx1, int idx2)
+void swap(int* p1, int* p2)
 {
-    int temp = arr[idx1];
-    arr[idx1] = arr[idx2];
-    arr[idx2] = temp;
+    int temp;
+    temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
 }
 
-// Use bubble sort
-int MedianOfThree(int arr[], int left, int right)
+int partition(int arr[], int low, int high)
 {
-    int samples[3] = { left, (left + right) / 2, right };
+    // choose the pivot
+    int pivot = arr[high];
 
-    if (arr[samples[0]] > arr[samples[1]])
-        Swap(samples, 0, 1);
+    // Index of smaller element and Indicate
+    // the right position of pivot found so far
+    int i = (low - 1);
 
-    if (arr[samples[1]] > arr[samples[2]])
-        Swap(samples, 1, 2);
-
-    if (arr[samples[0]] > arr[samples[1]])
-        Swap(samples, 0, 1);
-
-    return samples[1];
-}
-
-int Partition(int arr[], int left, int right)
-{
-    int pIdx  = MedianOfThree(arr, left, right);
-    int pivot = arr[pIdx];
-    int low   = left;
-    int high  = right;
-
-    printf("Pivot: %d\n", pivot);
-    
-    while (low <= high)
-    {
-        while (pivot >= arr[low] && low <= right)
-            low++;
-
-        while (pivot <= arr[high] && high >= left)
-            high--;
-
-        if (low <= high)
-            Swap(arr, low, high);
+    for (int j = low; j <= high; j++) {
+        // If current element is smaller than the pivot
+        if (arr[j] < pivot) {
+            // Increment index of smaller element
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
     }
-    if (high >= left)
-    Swap(arr, left, high);
-    return high;
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
 }
 
-void QuickSort(int arr[], int left, int right)
+void quickSort(int arr[], int low, int high)
 {
-    if (left <= right)
-    {
-        int pivot = Partition(arr, left, right);
-        QuickSort(arr, left, pivot - 1);
-        QuickSort(arr, pivot + 1, right);
+    // when low is less than high
+    if (low < high) {
+        // pi is the partition return index of pivot
+
+        int pi = partition(arr, low, high);
+
+        // Recursion Call
+        // smaller element than pivot goes left and
+        // higher element goes right
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
 }
 
-int main(void)
+int main()
 {
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
-
-    int len = sizeof(arr) / sizeof(int);
-    int i;
-
-    QuickSort(arr, 0, sizeof(arr)/sizeof(int) - 1);
-
-    for (i = 0; i < len; i++)
+    int arr[] = { 10, 7, 8, 9, 1, 5 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+  
+    quickSort(arr, 0, n - 1);
+  
+    printf("Sorted Array\n");
+    for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
-
-    printf("\n");
     return 0;
 }
