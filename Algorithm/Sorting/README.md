@@ -23,7 +23,7 @@
 
 - In worst case, assignment operation is performed 3 times more than comparison operation because it requires 3 assignments to swap elements. In Big-O notation, this amount of difference is ignored.
 
-- Quick sort is usually done in-place with O(log n) stack space.
+- Quick sort is usually done in-place with O(log n) stack space and it takes lesser assignment operations than others so that it's known as the fastest sorting algorithm on average.
 
 ### Reference
 
