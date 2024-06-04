@@ -18,9 +18,11 @@ int partition(int arr[], int low, int high)
     // the right position of pivot found so far
     int i = (low - 1);
 
-    for (int j = low; j <= high; j++) {
+    for (int j = low; j <= high; j++) 
+    {
         // If current element is smaller than the pivot
-        if (arr[j] < pivot) {
+        if (arr[j] < pivot) 
+        {
             // Increment index of smaller element
             i++;
             swap(&arr[i], &arr[j]);
@@ -33,9 +35,9 @@ int partition(int arr[], int low, int high)
 void quickSort(int arr[], int low, int high)
 {
     // when low is less than high
-    if (low < high) {
+    if (low < high) 
+    {
         // pi is the partition return index of pivot
-
         int pi = partition(arr, low, high);
 
         // Recursion Call
