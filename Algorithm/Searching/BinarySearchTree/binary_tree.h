@@ -32,6 +32,4 @@ BTreeNode * RemoveRightSubTree(BTreeNode * bt);
 void ChangeLeftSubTree(BTreeNode * main, BTreeNode * sub);
 void ChangeRightSubTree(BTreeNode * main, BTreeNode * sub);
 
-void DeleteTree(BTreeNode * bt);
-
 #endif  // _BINARY_TREE_H_
