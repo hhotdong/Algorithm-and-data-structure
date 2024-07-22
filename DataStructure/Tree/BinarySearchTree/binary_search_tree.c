@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "binary_search_tree.h"
+#include "AVLRebalance.h"
 
 void BSTMakeAndInit(BTreeNode ** pRoot)
 {
@@ -13,6 +14,7 @@ BSTData BSTGetNodeData(BTreeNode * bst)
     return GetData(bst);
 }
 
+/*
 void BSTInsert(BTreeNode ** pRoot, BSTData data)
 {
     BTreeNode * parentNode  = NULL;
@@ -46,6 +48,34 @@ void BSTInsert(BTreeNode ** pRoot, BSTData data)
         else
             MakeRightSubTree(parentNode, newNode);
     }
+
+    *pRoot = Rebalance(pRoot);
+}
+*/
+
+// 새로 추가되는 노드의 부모들에 대하여 리밸런싱 여부를 재귀적으로 판담함으로써 보다 완전하게 불균형을 해소하는 구현.
+BTreeNode * BSTInsert(BTreeNode ** pRoot, BSTData data)
+{
+    if (*pRoot == NULL)
+	{
+		*pRoot = MakeBTreeNode();
+		SetData(*pRoot, data);
+	}
+	else if (data < GetData(*pRoot))
+	{
+		BSTInsert(&((*pRoot)->left), data);
+		*pRoot = Rebalance(pRoot);
+	}
+	else if (data > GetData(*pRoot))
+	{
+		BSTInsert(&((*pRoot)->right), data);
+		*pRoot = Rebalance(pRoot);
+	}
+	else
+	{
+		return NULL;  // 키의 중복을 허용하지 않음.
+	}
+	return *pRoot;
 }
 
 BTreeNode * BSTSearch(BTreeNode * bst, BSTData target)
@@ -151,6 +181,8 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
         *pRoot = GetRightSubTree(pVirtualRoot);  // 루트 노드의 변경을 반영
 
     free(pVirtualRoot);
+
+    *pRoot = Rebalance(pRoot);
     return deleteNode;
 }
 
