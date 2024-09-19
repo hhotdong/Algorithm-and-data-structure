@@ -22,7 +22,7 @@
 
   - Subtree: All nodes except root can be seen as a root node of certain subtree.
 
-  - Full binary tree: All nodes except leaf have two children nodes.
+  - Full binary tree: All nodes except leaves have two children nodes.
 
   - Complete binary tree: All nodes except leaf level have two children nodes. Children of leaf nodes are filled from left to right.
 
