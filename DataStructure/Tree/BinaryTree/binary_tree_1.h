@@ -5,8 +5,8 @@
 #include <fstream>
 #include <string>
 
-#include "shared/array_base_stack_1.h"
-#include "shared/circular_queue_1.h"
+#include "../shared/array_base_stack_1.h"
+#include "../shared/circular_queue_1.h"
 
 template<typename T>
 class BinaryTree
