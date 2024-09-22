@@ -6,11 +6,11 @@
 >
 > "In computer science, a tree is a widely used abstract data type that represents a hierarchical tree structure with a set of connected nodes. Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent,[1] except for the root node, which has no parent (i.e., the root node as the top-most node in the tree hierarchy). These constraints mean there are no cycles or "loops" (no node can be its own ancestor), and also that each child can be treated like the root node of its own subtree, making recursion a useful technique for tree traversal."[^tree_definition_1]
 
-### Note
+## Note
 
 - Linked list fits well when implementing tree data structure. However, array can also be used specifically when the tree would be traversed frequently.
 
-- <details><summary>Terms</summary>
+## Terms
 
   - Root node: Node which doesn't have a parent node. It's starting point of tree.
 
@@ -25,9 +25,6 @@
   - Full binary tree: All nodes except leaves have two children nodes.
 
   - Complete binary tree: All nodes except leaf level have two children nodes. Children of leaf nodes are filled from left to right.
-
-</details>
-
 
 ### References
 
