@@ -1,4 +1,4 @@
-﻿// 홍정모 교수님, <자료구조 압축코스>
+// 홍정모 교수님, <자료구조 압축코스>
 #pragma once
 
 #include <cassert>
@@ -8,31 +8,31 @@ template<typename T>
 class SinglyLinkedList
 {
 public:
-	struct Node
-	{
-		T item = T();
-		Node* next = nullptr;
-	};
+    struct Node
+    {
+        T item = T();
+        Node* next = nullptr;
+    };
 
-	SinglyLinkedList() { }
+    SinglyLinkedList() { }
 
-	SinglyLinkedList(const SinglyLinkedList& list)
-	{
+    SinglyLinkedList(const SinglyLinkedList& list)
+    {
         Node* cur = list.first_;
         while (cur)
         {
             PushBack(cur->item);
             cur = cur->next;
         }
-	}
+    }
 
-	~SinglyLinkedList()
-	{
-		Clear();
-	}
+    ~SinglyLinkedList()
+    {
+        Clear();
+    }
 
-	void Clear()
-	{
+    void Clear()
+    {
         while (first_)
             PopFront();
 
@@ -45,42 +45,42 @@ public:
             del_node = del_node_next;
         }
         */
-	}
+    }
 
-	bool IsEmpty()
-	{
-		return first_ == nullptr;
-	}
+    bool IsEmpty()
+    {
+        return first_ == nullptr;
+    }
 
-	int Size()
-	{
-		int size = 0;
+    int Size()
+    {
+        int size = 0;
         Node* cur = first_;
         while (cur)
         {
             ++size;
             cur = cur->next;
         }
-		return size;
-	}
+        return size;
+    }
 
-	T Front()
-	{
-		assert(first_);
+    T Front()
+    {
+        assert(first_);
         return first_->item;
-	}
+    }
 
-	T Back()
-	{
-		assert(first_);
+    T Back()
+    {
+        assert(first_);
         Node* cur = first_;
         while (cur->next)
             cur = cur->next;
         return cur->item;
-	}
+    }
 
-	Node* Find(T item)
-	{
+    Node* Find(T item)
+    {
         Node* cur = first_;
 
         while (cur)
@@ -90,26 +90,26 @@ public:
             cur = cur->next;
         }
         return cur;  // nullptr
-	}
+    }
 
-	void InsertBack(Node* node, T item)
-	{
+    void InsertBack(Node* node, T item)
+    {
         Node* new_node = new Node;
         new_node->item = item;
         new_node->next = node->next;
         node->next     = new_node;
-	}
+    }
 
-	void Remove(Node* node)
-	{
-		if (first_ == node)
+    void Remove(Node* node)
+    {
+        if (first_ == node)
         {
             first_ = first_->next;
             delete node;
             return;
         }
 
-		Node* prev = first_;
+        Node* prev = first_;
         while (prev->next)
         {
             if (prev->next == node)
@@ -123,63 +123,63 @@ public:
         
         prev->next = node->next;
         delete node;
-	}
+    }
 
-	void PushFront(T item)
-	{
-		Node* new_node = new Node;
+    void PushFront(T item)
+    {
+        Node* new_node = new Node;
         new_node->item = item;
         new_node->next = first_;
         first_         = new_node;
-	}
+    }
 
-	void PushBack(T item)
-	{
-		if (first_)
-		{
-		    Node* new_node = new Node;
+    void PushBack(T item)
+    {
+        if (first_)
+        {
+            Node* new_node = new Node;
             new_node->item = item;
             new_node->next = nullptr;
 
-			Node* cur = first_;
+            Node* cur = first_;
             while (cur->next)
                 cur = cur->next;
             cur->next = new_node;
-		}
-		else
-		{
-		    Node* new_node = new Node;
+        }
+        else
+        {
+            Node* new_node = new Node;
             new_node->item = item;
             new_node->next = nullptr;
             first_ = new_node;
-		}
-	}
+        }
+    }
 
-	void PopFront()
-	{
-		if (IsEmpty())
-		{
-			using namespace std;
-			cout << "Nothing to Pop in PopFront()" << endl;
-			return;
-		}
+    void PopFront()
+    {
+        if (IsEmpty())
+        {
+            using namespace std;
+            cout << "Nothing to Pop in PopFront()" << endl;
+            return;
+        }
 
-		assert(first_);
+        assert(first_);
         Node* next = first_->next;
         delete first_;
         first_ = next;
-	}
+    }
 
-	void PopBack()
-	{
-		if (IsEmpty())
-		{
-			using namespace std;
-			cout << "Nothing to Pop in PopBack()" << endl;
-			return;
-		}
+    void PopBack()
+    {
+        if (IsEmpty())
+        {
+            using namespace std;
+            cout << "Nothing to Pop in PopBack()" << endl;
+            return;
+        }
 
-		assert(first_);
+        assert(first_);
 
         if (first_->next == nullptr)
         {
@@ -195,12 +195,12 @@ public:
         Node* temp = second_last->next;
         second_last->next = second_last->next->next;
         delete temp;
-	}
+    }
 
-	void Reverse()
-	{
+    void Reverse()
+    {
         Node* prev = nullptr;
-		Node* cur  = first_;
+        Node* cur  = first_;
         while (cur)
         {
             Node* pprev = prev;
@@ -209,53 +209,53 @@ public:
             prev->next = pprev;
         }
         first_ = prev;
-	}
+    }
 
-	void SetPrintDebug(bool flag)
-	{
-		print_debug_ = flag;
-	}
+    void SetPrintDebug(bool flag)
+    {
+        print_debug_ = flag;
+    }
 
-	void Print()
-	{
-		using namespace std;
+    void Print()
+    {
+        using namespace std;
 
-		Node* current = first_;
+        Node* current = first_;
 
-		if (IsEmpty())
-			cout << "Empty" << endl;
-		else
-		{
-			cout << "Size = " << Size() << " ";
+        if (IsEmpty())
+            cout << "Empty" << endl;
+        else
+        {
+            cout << "Size = " << Size() << " ";
 
-			while (current)
-			{
-				if (print_debug_)
-				{
-					//cout << "[" << current << ", " << current->item << ", " << current->next << "]";
+            while (current)
+            {
+                if (print_debug_)
+                {
+                    //cout << "[" << current << ", " << current->item << ", " << current->next << "]";
 
-					// 주소를 짧은 정수로 출력 (앞 부분은 대부분 동일하기때문에 뒷부분만 출력)
-					cout << "[" << reinterpret_cast<uintptr_t>(current) % 100000 << ", "
-						<< current->item << ", "
-						<< reinterpret_cast<uintptr_t>(current->next) % 100000 << "]";
-				}
-				else
-				{
-					cout << current->item;
-				}
+                    // 주소를 짧은 정수로 출력 (앞 부분은 대부분 동일하기때문에 뒷부분만 출력)
+                    cout << "[" << reinterpret_cast<uintptr_t>(current) % 100000 << ", "
+                        << current->item << ", "
+                        << reinterpret_cast<uintptr_t>(current->next) % 100000 << "]";
+                }
+                else
+                {
+                    cout << current->item;
+                }
 
-				if (current->next)
-					cout << " -> ";
-				else
-					cout << " -> NULL";
+                if (current->next)
+                    cout << " -> ";
+                else
+                    cout << " -> NULL";
 
-				current = current->next;
-			}
-			cout << endl;
-		}
-	}
+                current = current->next;
+            }
+            cout << endl;
+        }
+    }
 
 protected:
-	Node* first_ = nullptr;
-	bool print_debug_ = false;
+    Node* first_ = nullptr;
+    bool print_debug_ = false;
 };

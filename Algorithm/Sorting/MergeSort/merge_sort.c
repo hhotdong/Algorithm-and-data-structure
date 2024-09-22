@@ -1,4 +1,4 @@
-// 윤성우의 열혈 자료구조
+// 윤성우, <열혈 자료구조>
 #include <stdio.h>
 #include <stdlib.h>
 

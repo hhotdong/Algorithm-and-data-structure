@@ -9,7 +9,7 @@ using namespace std;
 
 Matrix::Matrix(int num_rows, int num_cols)
 {
-	values_ = new float[num_rows * num_cols];
+    values_ = new float[num_rows * num_cols];
     num_rows_ = num_rows;
     num_cols_ = num_cols;
 
@@ -29,7 +29,7 @@ Matrix::Matrix(const Matrix& b)
 
 Matrix::~Matrix()
 {
-	if (values_) delete[] values_;
+    if (values_) delete[] values_;
 }
 
 void Matrix::SetValue(int row, int col, float value)
@@ -39,41 +39,41 @@ void Matrix::SetValue(int row, int col, float value)
 
 float Matrix::GetValue(int row, int col) const
 {
-	return values_[row * num_cols_ + col];
+    return values_[row * num_cols_ + col];
 }
 
 Matrix Matrix::Transpose()
 {
-	Matrix temp(num_cols_, num_rows_);
+    Matrix temp(num_cols_, num_rows_);
 
     for (int r = 0; r < num_rows_; ++r)
         for (int c = 0; c < num_cols_; ++c)
             temp.SetValue(c, r, GetValue(r, c));
 
-	return temp;
+    return temp;
 }
 
 Matrix Matrix::Add(const Matrix& b)
 {
-	assert(b.num_cols_ == num_cols_);
-	assert(b.num_rows_ == num_rows_);
+    assert(b.num_cols_ == num_cols_);
+    assert(b.num_rows_ == num_rows_);
 
-	Matrix temp(num_rows_, num_cols_);
+    Matrix temp(num_rows_, num_cols_);
 
     for (int r = 0; r < num_rows_; ++r)
         for (int c = 0; c < num_cols_; ++c)
             temp.SetValue(r, c, GetValue(r, c) + b.GetValue(r, c));
 
-	return temp;
+    return temp;
 }
 
 void Matrix::Print()
 {
-	for (int r = 0; r < num_rows_; r++)
-	{
-		for (int c = 0; c < num_cols_; c++)
-			cout << GetValue(r, c) << " ";
+    for (int r = 0; r < num_rows_; r++)
+    {
+        for (int c = 0; c < num_cols_; c++)
+            cout << GetValue(r, c) << " ";
 
-		cout << endl;
-	}
+        cout << endl;
+    }
 }

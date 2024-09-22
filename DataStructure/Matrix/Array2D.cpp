@@ -1,4 +1,4 @@
-﻿// 홍정모 연구소, <자료구조 압축코스>
+// 홍정모 연구소, <자료구조 압축코스>
 #include "Array2D.h"
 
 #include <algorithm>
@@ -48,7 +48,7 @@ Array2D::Array2D(const Array2D& b)
 
 Array2D::~Array2D()
 {
-	if (arrays_)
+    if (arrays_)
     {
         for (int r = 0; r < num_rows_; ++r)
             delete[] arrays_[r];
@@ -58,46 +58,46 @@ Array2D::~Array2D()
 
 void Array2D::SetValue(int row, int col, float value)
 {
-	arrays_[row][col] = value;
+    arrays_[row][col] = value;
 }
 
 float Array2D::GetValue(int row, int col) const
 {
-	return arrays_[row][col];
+    return arrays_[row][col];
 }
 
 Array2D Array2D::Transpose()
 {
-	Array2D temp(num_cols_, num_rows_);
+    Array2D temp(num_cols_, num_rows_);
 
-	for (int r = 0; r < num_rows_; r++)
-		for (int c = 0; c < num_cols_; c++)
-			temp.SetValue(c, r, GetValue(r, c));
+    for (int r = 0; r < num_rows_; r++)
+        for (int c = 0; c < num_cols_; c++)
+            temp.SetValue(c, r, GetValue(r, c));
 
-	return temp;
+    return temp;
 }
 
 Array2D Array2D::Add(const Array2D& b)
 {
-	assert(b.num_cols_ == num_cols_);
-	assert(b.num_rows_ == num_rows_);
+    assert(b.num_cols_ == num_cols_);
+    assert(b.num_rows_ == num_rows_);
 
-	Array2D temp(num_rows_, num_cols_);
+    Array2D temp(num_rows_, num_cols_);
 
-	for (int r = 0; r < num_rows_; r++)
-		for (int c = 0; c < num_cols_; c++)
-			temp.SetValue(r, c, GetValue(r, c) + b.GetValue(r, c));
+    for (int r = 0; r < num_rows_; r++)
+        for (int c = 0; c < num_cols_; c++)
+            temp.SetValue(r, c, GetValue(r, c) + b.GetValue(r, c));
 
-	return temp;
+    return temp;
 }
 
 void Array2D::Print()
 {
-	for (int r = 0; r < num_rows_; r++)
-	{
-		for (int c = 0; c < num_cols_; c++)
-			cout << GetValue(r, c) << " ";
+    for (int r = 0; r < num_rows_; r++)
+    {
+        for (int c = 0; c < num_cols_; c++)
+            cout << GetValue(r, c) << " ";
 
-		cout << endl;
-	}
+        cout << endl;
+    }
 }

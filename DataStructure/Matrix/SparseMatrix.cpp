@@ -1,4 +1,4 @@
-﻿// 홍정모 연구소, <자료구조 압축코스>
+// 홍정모 연구소, <자료구조 압축코스>
 #include "SparseMatrix.h"
 
 #include <algorithm>
@@ -9,7 +9,7 @@ using namespace std;
 
 SparseMatrix::SparseMatrix(int num_rows, int num_cols, int capacity)
 {
-	terms_ = new MatrixTerm[capacity];
+    terms_ = new MatrixTerm[capacity];
     capacity_ = capacity;
     num_rows_ = num_rows;
     num_cols_ = num_cols;
@@ -18,7 +18,7 @@ SparseMatrix::SparseMatrix(int num_rows, int num_cols, int capacity)
 
 SparseMatrix::SparseMatrix(const SparseMatrix& b)
 {
-	if (b.capacity_ > 0)
+    if (b.capacity_ > 0)
     {
         terms_ = new MatrixTerm[b.capacity_];
         capacity_ = b.capacity_;
@@ -31,12 +31,12 @@ SparseMatrix::SparseMatrix(const SparseMatrix& b)
 
 SparseMatrix::~SparseMatrix()
 {
-	if (terms_) delete[] terms_;
+    if (terms_) delete[] terms_;
 }
 
 void SparseMatrix::SetValue(int row, int col, float value)
 {
-	if (value == 0.0f) return;
+    if (value == 0.0f) return;
 
     int key = col + num_cols_ * row;
     int i = 0;
@@ -68,7 +68,7 @@ float SparseMatrix::GetValue(int row, int col) const
     //for (int i = 0; i < num_terms_; ++i)
     //    if (terms_[i].row == row && terms_[i].col == col)
     //        return terms_[i].value;
-	//return 0.0f;
+    //return 0.0f;
 
     // terms가 row, col에 대해 정렬되어 있는 경우 검색을 더 빠르게 할 수 있음.
     int key = col + num_cols_ * row;
@@ -85,9 +85,9 @@ float SparseMatrix::GetValue(int row, int col) const
 
 SparseMatrix SparseMatrix::Transpose()
 {
-	SparseMatrix temp(num_cols_, num_rows_, capacity_);
+    SparseMatrix temp(num_cols_, num_rows_, capacity_);
 
-	// 정렬이 안된 상태
+    // 정렬이 안된 상태
     // O(num_rows_ * num_cols_ * num_terms_)
     //for (int r = 0; r < num_rows_; ++r)
     //    for (int c = 0; c < num_cols_; ++c)
@@ -111,24 +111,24 @@ SparseMatrix SparseMatrix::Transpose()
                 temp.num_terms_++;
             }
         }
-	return temp;
+    return temp;
 }
 
 void SparseMatrix::PrintTerms()
 {
-	for (int i = 0; i < num_terms_; i++)
-		cout << "(" << terms_[i].row
-		<< ", " << terms_[i].col
-		<< ", " << terms_[i].value
-		<< ")" << endl;
+    for (int i = 0; i < num_terms_; i++)
+        cout << "(" << terms_[i].row
+        << ", " << terms_[i].col
+        << ", " << terms_[i].value
+        << ")" << endl;
 }
 
 void SparseMatrix::Print()
 {
-	for (int r = 0; r < num_rows_; r++)
-	{
-		for (int c = 0; c < num_cols_; c++)
-			cout << GetValue(r, c) << " ";
-		cout << endl;
-	}
+    for (int r = 0; r < num_rows_; r++)
+    {
+        for (int c = 0; c < num_cols_; c++)
+            cout << GetValue(r, c) << " ";
+        cout << endl;
+    }
 }

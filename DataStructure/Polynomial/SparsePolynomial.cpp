@@ -9,36 +9,36 @@ using namespace std;
 
 void SparsePolynomial::NewTerm(float coef, int exp)
 {
-	if (coef == 0.0f) return;
+    if (coef == 0.0f) return;
 
-	if (num_terms_ >= capacity_)
-	{
-		capacity_ = capacity_ > 0 ? capacity_ * 2 : 1;
-		Term* new_term = new Term[capacity_];
+    if (num_terms_ >= capacity_)
+    {
+        capacity_ = capacity_ > 0 ? capacity_ * 2 : 1;
+        Term* new_term = new Term[capacity_];
 
-		memcpy(new_term, terms_, sizeof(Term) * num_terms_);
+        memcpy(new_term, terms_, sizeof(Term) * num_terms_);
 
-		if (terms_) delete[] terms_;
-		terms_ = new_term;
-	}
-	terms_[num_terms_].coef = coef;
-	terms_[num_terms_].exp = exp;
-	num_terms_++;
+        if (terms_) delete[] terms_;
+        terms_ = new_term;
+    }
+    terms_[num_terms_].coef = coef;
+    terms_[num_terms_].exp = exp;
+    num_terms_++;
 }
 
 float SparsePolynomial::Eval(float x)
 {
-	float temp = 0.0f;
+    float temp = 0.0f;
     for (int i = 0; i < num_terms_; ++i)
         temp += terms_[i].coef * std::powf(x, float(terms_[i].exp));
-	return temp;
+    return temp;
 }
 
 SparsePolynomial SparsePolynomial::Add(const SparsePolynomial& poly)
 {
-	// this와 poly의 terms_가 exp의 오름차순으로 정렬되어 있다고 가정
-	// 하나의 다항식 안에 exp가 중복되는 term이 없다라고 가정 (한 exp는 하나의 term만 존재)
-	SparsePolynomial temp;
+    // this와 poly의 terms_가 exp의 오름차순으로 정렬되어 있다고 가정
+    // 하나의 다항식 안에 exp가 중복되는 term이 없다라고 가정 (한 exp는 하나의 term만 존재)
+    SparsePolynomial temp;
     
     int i = 0, j = 0;
 
@@ -70,26 +70,26 @@ SparsePolynomial SparsePolynomial::Add(const SparsePolynomial& poly)
     for (; j < poly.num_terms_; ++j)
         temp.NewTerm(poly.terms_[j].coef, poly.terms_[j].exp);
 
-	return temp;
+    return temp;
 }
 
 void SparsePolynomial::Print()
 {
-	bool is_first = true; // 더하기 출력시 확인용
+    bool is_first = true; // 더하기 출력시 확인용
 
-	for (int i = 0; i < num_terms_; i++)
-	{
-		// 0이 아닌 항들만 골라서 출력할 필요가 없음
+    for (int i = 0; i < num_terms_; i++)
+    {
+        // 0이 아닌 항들만 골라서 출력할 필요가 없음
 
-		if (!is_first)
-			cout << " + "; // 첫 항이 아니라면 사이사이에 더하기 출력
+        if (!is_first)
+            cout << " + "; // 첫 항이 아니라면 사이사이에 더하기 출력
 
-		cout << terms_[i].coef;
+        cout << terms_[i].coef;
 
-		if (terms_[i].exp != 0) cout << "*" << "x^" << terms_[i].exp;
+        if (terms_[i].exp != 0) cout << "*" << "x^" << terms_[i].exp;
 
-		is_first = false;
-	}
+        is_first = false;
+    }
 
-	cout << endl;
+    cout << endl;
 }
