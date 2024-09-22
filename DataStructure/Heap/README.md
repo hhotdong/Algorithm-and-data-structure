@@ -1,6 +1,6 @@
 # Heap
 
-> "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree."[^GeeksforGeeks]
+> "A heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree."[^GeeksforGeeks]
 
 ## ADT
 
@@ -8,15 +8,15 @@
 - Extract[^extract]
 - Heapify[^heapify]
 
-## Notes
+## Note
 
-- Heap can be implemented on either array based or linked list based. Given a node in heap, it's easy to find both parent and children node in array based heap unlike linked list based heap, where finding parent isn't easy. Therefore, removing heap element can be easily implemented in array based heap.
+- Heap can be implemented on either array based or linked list based. Given a node in heap, it's easy to find both parent and children node in array based heap unlike linked list based heap, where finding parent isn't easy. Therefore, removing heap element can be easily implemented in array based heap, where it's required to find the index of parent repetitively.
 
-- In array based heap, it's comfortable to make the first element at index 0 empty because it makes indexing of parent, children a little bit more  easier to calculate.[^first_element_empty]
+- In array based heap, it's comfortable to make the first element(at index 0) empty because it makes indexing of parent, children a little bit easier to calculate.[^first_element_empty]
 
 ```cpp
-    (parent index) = (left child index) / 2  // Note: Dividing with truncatation towards zero.
-    (left child index) = (current index) * 2
+    (parent index)      = (child index) / 2  // Note: Dividing with truncatation towards zero.
+    (left child index)  = (current index) * 2
     (right child index) = (current index) * 2 + 1
 ```
 
