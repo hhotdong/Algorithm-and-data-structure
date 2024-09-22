@@ -71,7 +71,7 @@ public:
             cout << "Current = " << current << endl;
             Print();
 
-            current = current / 2;
+            current /= 2;
         }
         heap_[current] = item; // 최종적으로 결정된 위치에 복사
     }
@@ -91,7 +91,7 @@ public:
         size_--;                    // 크기 줄이기
 
         int current = 1;            // 루트 노드에서 시작
-        int child = 2;                // current * 2 (루트의 왼쪽 자식 인덱스)
+        int child = 2;              // current * 2 (루트의 왼쪽 자식 인덱스)
         while (child <= size_)
         {
             // left, right 중에서 더 큰 자식의 인덱스를 찾는다. 이때 자식이 하나라면 찾을 필요 없음
@@ -113,7 +113,7 @@ public:
 
             // 그 자식 위치로 current 인덱스 변경, child 인덱스도 그 다음 자식 위치로 변경
             current = child;
-            child = current * 2;
+            child *= 2;
         }
         heap_[current] = last_item;
     }
